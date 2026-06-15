@@ -1,0 +1,1681 @@
+Delivered-To: akhileshbadyal@gmail.com
+Received: by 2002:a05:6402:a291:20b0:660:d9b0:cb70 with SMTP id h17-n2csp1297007edf;
+        Sun, 15 Mar 2026 20:02:17 -0700 (PDT)
+X-Received: by 2002:a05:600c:1388:b0:485:3ee1:eba5 with SMTP id 5b1f17b1804b1-4855670297amr193161495e9.27.1773630137351;
+        Sun, 15 Mar 2026 20:02:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1773630137; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Omp4wsQd/HW7naJ3qctAL23GhBeZmmTrdCPZJQR48hhjVF0UG1zRQHAe2i8iNoSqKB
+         xiImDENwK9TS/znY4tp5aMM5Acw5tR2vJWFots/SkKicl9P8wXmP3HWglUC4gj2GFjw/
+         XnZ1EMw7AYvr7YvoV8hyX6yJS2zm8bU8CfOTPnR6XUO0oQ6pxB1de0A2le5BRuvKnzJO
+         Pzqa5LWtG5KrRddNkoQ/hjy7R14z1MFDBTRoO2xyRj7Vt6Mjb41AjZa4chD8QSSxINjD
+         t5Pxh5qOO9ulGXoqdFeLuoUpaZV7k4c0hCNpCARox9iTqME8JB4z1Skq/V0yqTWqgeh+
+         E9gA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:date:campaign_id:feedback-id:subject
+         :list-unsubscribe-post:to:content-id:mime-version
+         :list-unsubscribe-post:in-reply-to:list-id:feedback-id
+         :content-transfer-encoding:references:errors-to:rcpt_domain
+         :feedback-id:from:dkim-signature;
+        bh=/DaO1zeBkFls7NRU5iPtZWVCG5CPO5iWaNvkrfnyQ6k=;
+        fh=uslzcddEdSEMWUPJaGJx3/3UwrU9lq8qvkgk3Fmi3TE=;
+        b=Fok8q8jHk4Vb0NpUsaeCzn6JzEJFFeA3mNNshfJd0XPa6isZ9AS7+9/lw/uPJMcfGj
+         IjSjNo3nXTa6r+Z763sBtJCE7R1U7CbU+0d7HLS+aUW+vcXyNtMAPg/a+dXe5ZWTmh4K
+         qjrQKl3NjqUJ6e8YOmT9E+zp+Xtz0Y7OyHY8ZKCxiww5wnNm0RAfryUmTsKB+gZj5nIv
+         b631o2755xgzYc2oMRgpkLOC4KGG7WDRBdDMjcf2SfBb3vp9rOabPi1oCfvqsv48w29Q
+         nbxkfSIVw+lAfDg6M9+PfJ5xD4EyyRbadYFIULu2rJ4gRak0UjxS2VZ9qcFYllbglYl1
+         joqg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=SO+d8W3D;
+       spf=pass (google.com: domain of robertsonhenry21@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=robertsonhenry21@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <robertsonhenry21@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id ffacd0b85a97d-43a07306473sor1604604f8f.11.2026.03.15.20.02.17
+        for <akhileshbadyal@gmail.com>
+        (Google Transport Security);
+        Sun, 15 Mar 2026 20:02:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of robertsonhenry21@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=SO+d8W3D;
+       spf=pass (google.com: domain of robertsonhenry21@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=robertsonhenry21@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1773630137; x=1774234937; dara=google.com;
+        h=message-id:date:campaign_id:feedback-id:subject
+         :list-unsubscribe-post:to:content-id:mime-version
+         :list-unsubscribe-post:in-reply-to:list-id:feedback-id
+         :content-transfer-encoding:references:errors-to:rcpt_domain
+         :feedback-id:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=/DaO1zeBkFls7NRU5iPtZWVCG5CPO5iWaNvkrfnyQ6k=;
+        b=SO+d8W3D9AnCGnlV73zQESm9o9k70y1PYGCVtSV1NanzjSRsXIKr/EntBS97DQBC8a
+         C7k5aSK7feHzdVHiYVCAeADBrNitX4rkmRbX/zcap4ws7HEp5eMLe4DLB5u1VuItgwpa
+         amgVydfIfB9271iDLZQ2klRNfMn8PnwakwiXJqyv0OqrgRamffPKVDJ2fke4ewTpSE+X
+         oaAPoDK1msDM4FLNHc5eixqz8/4jlAL6k8iD7S7BMyOW0/AppE9yoRZWSUl544DrOqph
+         EGnNUYjrjgwrP7KEGZKqxsLUh9i7Dt8j3IyinJHgaK5MsMXO8WRgAFyQcinTMScrwghj
+         YDlA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1773630137; x=1774234937;
+        h=message-id:date:campaign_id:feedback-id:subject
+         :list-unsubscribe-post:to:content-id:mime-version
+         :list-unsubscribe-post:in-reply-to:list-id:feedback-id
+         :content-transfer-encoding:references:errors-to:rcpt_domain
+         :feedback-id:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/DaO1zeBkFls7NRU5iPtZWVCG5CPO5iWaNvkrfnyQ6k=;
+        b=pnQmFrzeppFRSdAnispdNalWoEzAqOPyFh1Z8DvYI2zZQ56T3b20W+n0EpUCyoB/Fq
+         Y8TdHeeusp8aFSqiCKhufHfdGmPx1XV0ByBUEiGhRIfE2FN7ft5Y/QVtQWRjaSCX485z
+         iAUkLyckilOKr+SYpyxXkW2hYXOWVwn56sy5pTU1w0daLMw+KNeSf1A2fN20a/Yp8nTw
+         gQORAtx7odRoQfaZpy1kg57UIGuv82dP5JBeBiVB0oo8/ReUUdbZMWx0HwE96uQfn2NZ
+         a9DZxeCO9aedwG+vT0bia8ZKZyz9pIa0fk0+iFYLZebA6/8Mt3N94c8WE6Sw2SB8D+/P
+         eZdQ==
+X-Gm-Message-State: AOJu0Yx2BxIl81I8/Rg+BEiDmWLFPhGi+iPs6A0KyvjrI6V4S9KVVTgE
+	rTLE+H+mGSpzGJwUfgVxkyaxBO2AdNFLOmiPtWG9anZczCpmDgJOsFJgmbDOQ+Qi67khLOEWOgo
+	=
+X-Gm-Gg: ATEYQzxIofQbl+zY11tz7diPpeC9qpS/qvlhxn7BA9FCSMYttf/0UxwNIUktlKzgEtV
+	ntoKXefwbv3PwR6twIW61BPAvfAzaiUyWSS16EG6Q+W2/oyugY4BruF7qlKu0kTSpqctcMJMedW
+	2ov5RmNk9Asxbowj25lUKogkRLjhC/5rNYI8C2jgkhDpUUqhFBe+EZdSdsk1XKmwubesuNlzQeA
+	f8xFGBSKlJ0e/rKkmzYs7xJUDunc/0E4sAqMqBBsYKEaFU1JgfAJJ+k5CvOoBQh2/NF57laChio
+	jzYv26x3SkhlqlYwtsKa0IxMOFpJBL7ZWnPFX7UBTOr0M2Cl2txSHcHWRE0XxbysVWnpa5EvQuZ
+	tAQ8C0uCDAe+LeUewuoUlhyVOgSnOWdAbIHjgGgMvFR5t55j9AnsEBNgSKALGTxuQpRJ5uAEahB
+	3BN2JJdypK/PU5JbbGIX979FCatH9Fmu4EXZsZTLBeEZ3jTJgQe3Fbohf8hWrugHjfkhG90hjZA
+	7VaLy5rRfJs5zuIUXsLSZgNkZ8=
+X-Received: by 2002:a5d:5d02:0:b0:439:bf55:f5ec with SMTP id ffacd0b85a97d-43a04dd4dc5mr20552132f8f.50.1773630136221;
+        Sun, 15 Mar 2026 20:02:16 -0700 (PDT)
+Return-Path: <robertsonhenry21@gmail.com>
+Received: from mail.clockify.me ([185.53.211.249])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43b416e3678sm9963362f8f.17.2026.03.15.20.02.15
+        for <akhileshbadyal@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 15 Mar 2026 20:02:15 -0700 (PDT)
+From: Confirmation <robertsonhenry21@gmail.com>
+X-Google-Original-From: "Confirmation" <SE71NY3XMAB0IW.SMO2LQJIDWOET@SCYVTGSOREDR.nebrwesleyan.edu>
+X-Campaign: shezrtddpo93eaqug6qci43g5ewspzuogs.xezrnqxthi
+X-SFDC-User: 005f200000vtoJj
+X-rpcampaign: 15791045
+X-Report-Spam: <abuse@jvaewnmryroe.mqifbxocn.nebrwesleyan.edu.com>
+X-Unsubscribe-Web: https://zdjqeqvgkl.jw/oc/8DoXBEU0GYAORUGe52727tdzPi9G9y.EiBl/HaM7HNZP7hM04nr7eqgl
+X-SFDC-EmailCategory: workflowActionAlert
+X-Auto-Response-Suppress: OOF, AutoReply
+Feedback-ID: 5683748994:34185:026603921837:sfmktgcld
+X-Report-Abuse: <abuse@awpcidbkckddaf.cjymlecjd.nebrwesleyan.edu.com>
+X-LinkedIn-Class: JOBS-TO-MBR
+X-SFDCRelayAddr: gmr-smtp-in.l.google.com
+rcpt_domain: gmail.com
+X-Feedback-ID: 1835:15791045:campaign:customerio
+Errors-To: abuse@crgxzfonxrodubr.uyyutrhlax.nebrwesleyan.edu.com
+X-SFDCRelayPort: 25
+X-LinkedIn-fbl-pzqxmrx: m2--mywlfbotbojrleqgnydoqiqalej
+References: <ilsvip3jbsliju3e3vqh1k@nebrwesleyan.edu> <rf6uimojlog32nnmhkf1uta-n2igqhd5rivfl5lsbluvb+qqh59@mail.gmail.com>
+Content-Transfer-Encoding: 7bit
+X-Kmail-Account: P5teWN
+Feedback-ID: P5teWN:pVKgyumvzl8:1448
+X-campaignid: shezrtddpo93eaqug6qci43g5ewspzuogs.ymdhqthwfb
+List-ID: <1640855.xutyltkcwx.local>
+In-Reply-To: <akhileshbadyal-dsYDajY6XW@dsYDajY6XW.kiwjmstbjg.nebrwesleyan.edu.com>
+X-SFDC-Restrict: ^(.*)
+X-SFMC-Stack: 7
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+X-SFDC-LK: 00D00000000LMFl
+Content-Id: <FEM3WTf7pmWeSir.bPa6i8s3ducxtwfM@FEM3WTf7pmWeSir.vdkkyowzjt.nebrwesleyan.edu.com>
+X-TM-ID: 6994327399.15791045.39763
+X-SFDC-Binding: bPa6i8s3ducxtwfM
+To: "akhileshbadyal@gmail.com" <akhileshbadyal@gmail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Feedback-ID: 9089470:US
+Subject: Payment skipping
+X-Complaints-To: return@nebrwesleyan.edu
+Feedback-ID: P5teWN:pVKgyumvzl8:forms::container:CK
+X-Feedback-ID: 01066769:67509728:27534:iterable
+Content-Type: multipart/mixed; boundary="-------udQ7jKKG--==--EiBl-==--udQ7jKKG--==--"; type="multipart/alternative"
+X-SFDC-EntityId: 01W5w0000001474
+X-SFDCTLS: 0
+X-SG-EID: WjUbLpX/bARCxVHIyUjaezZXYkryBZjJQfHbPFNmanxJqbnQbLtmvtqYL+/lj0xiopy9d2j/pbhfoh/zEFepceIOGy4U23TVhvYvfBkfFSZdQSb1yaE+zEFepceIOGy4U23TVhvYvfBkfFSZdQSb1yaE/wgqgr/WiAXzWK5LJQIAZozkcomOTdELlVOos5PMej6bzzVf4K5pT1J+FEM3WTf7pmWeSir/r32NyZDmkghrgdQQWABnRKt8uyYJ095ZmH==?
+X-Gm-Features: HyGCCuRh-Lb17RZ9t4Llg-FEM3WTf7pmWeSir-udQ7jKKG-3T-FleUgDs-PXbEK
+X-Google-Original-From: "GoogleAlerts" <SE71NY3XMAB0IW.SMO2LQJIDWOET@CFVUGYHTQQLD.kcixricll.nebrwesleyan.edu.com>
+X-Mailer: qjbgrjjqlbr itvtcpohu.nebrwesleyan.edu.com
+campaign_id: 535314
+X-Entity-ID: dSKv1sy1itYeF5lUTzkda5==?=
+X-SFDC-Interface: internal
+Date: Mon, 16 Mar 2026 04:01:05 +0100
+X-JMailer: ip-10-55-95-109.ec2.internal
+Message-ID: <31576628756139.di1dhg9bxsvoyjdqk1rd5bge@gmail.com>
+
+---------udQ7jKKG--==--EiBl-==--udQ7jKKG--==--
+Content-Type: multipart/mixed; boundary="_-------lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir-614639886227152lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir=:"
+
+
+--_-------lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir-614639886227152lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir=:
+Content-Type: text/html;charset="UTF-8"
+
+
+<div style="font-size:calc(100% - 100%)">
+
+
+<title>
+<head>
+Informational Webinar:
+Ability to Benefit State
+Process Technical
+Assistance Opportunity
+MAY 8, 2024
+Disclaimer
+The Dual Enrollment for Adult Learners is maintained under contract
+with Manhattan Strategy Group with funding from the U S  Department
+of Education (ED), Office of Career, Technical, and Adult Education
+(OCTAE), under Contract No  GS10F0201T  The opinions expressed
+herein do not necessarily represent the positions or policies of the U S 
+Department of Education, and no official endorsement by the U S 
+Department of Education should be inferred 
+2
+Agenda
+• Welcome from the U S  Department of Education, Office of Career,
+Technical, and Adult Education (OCTAE)
+• About Ability to Benefit (ATB)
+• Overview of Technical Assistance (TA) Opportunity
+• Q&A
+• Important Dates
+3
+Welcome
+Erin Berg
+Program Specialist and Contracting Officer’s Representative
+U S  Department of Education
+Office of Career, Technical, and Adult Education (OCTAE)
+4
+About DEAL
+• Funded by OCTAE under Contract No  GS10F0201T 
+• Aims to support the development of ATB alternate state processes
+and increase the overall usage of ATB to support the dual enrollment
+of adult learners in postsecondary education
+• Staffed by MSG, World Education, and RTI International
+5
+Poll: Who’s Here?
+Please indicate your organization type:
+• State adult education agency
+• State higher education agency
+• Higher education institution
+• Local adult education provider
+• Other (please enter in chat)
+6
+About ATB
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+7
+What is ATB?
+ATB alternatives allow students who do not have a high school
+diploma or equivalency to become eligible for Title IV student
+assistance (federal student aid) if the student is enrolled in an eligible
+career pathway program (ECPP) 
+8
+ATB Timeline
+9
+ATB Student Eligibility
+• Students who seek Title IV eligibility under ATB alternatives, must:
+• Be enrolled in an ECPP
+• Have the opportunity to attain a high school equivalency -
+underscoring the importance of dual enrollment in both adult
+education and the postsecondary career pathway
+• Be eligible for federal student aid
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+10
+ATB Student Eligibility (continued)
+• Students must also meet one of the following ATB eligibility
+alternatives:
+• Pass an ATB test (CELSA, ACCUPLACER, Texas Success Initiative
+Assessment)
+• Complete at least six credit hours or 225 clock hours applicable to
+a degree or certificate offered by the postsecondary institution
+• Participate in a state process approved by the Secretary of
+Education
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+11
+ECPPs
+• Students must be concurrently enrolled in all three of the following:
+• Adult education and literacy programming that assists adults in
+attaining a high school diploma or equivalent,
+• A Title IV eligible postsecondary program, and
+• Workforce preparation activities and training for a specific
+occupation or occupational cluster 
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+12
+ECPPs (continued)
+• ECPPs must also:
+• Align with the skill needs of the state or regional economy
+• Include academic and career counseling
+• Accelerate students’ educational and career advancement
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+13
+Why Implement a State Process?
+• Students don’t have to wait until they can pass a test or earn six
+credits 
+• Students and colleges don’t have to find funds for test fees or the
+first six credits 
+• State processes can help create and support an intentional adult
+dual enrollment strategy 
+• States don’t have to commit all institutions to implementing the state
+process when applying 
+• Colleges in states with an approved process have more options – they can also use other two ATB options (i e , states and institutions
+are not limited to one ATB alternative) 
+14
+States with Approved State Processes
+● California
+● Illinois
+● Iowa
+● Minnesota
+● Mississippi
+● Washington
+● Wisconsin
+States that have or recently had an approved state process 
+15
+Promising Practices of Adopters
+A landscape scan identified three interconnected themes of adopters
+and their partners:
+• Intentional and sustained systems that allows adopters to
+effectively identify, enroll, support, and track both potential and
+current ATB students 
+• Clear and collaborative partnerships that are driven by a shared
+vision and sense of collective responsibility 
+• A learner-centered mindset driven by the belief that adult
+learners can succeed in postsecondary education without a high
+school equivalency 
+16
+Resources
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+17
+Overview of TA Opportunity
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+18
+DEAL TA Opportunities
+TA to State Teams
+(including Postsecondary
+Institutions)
+TA to Postsecondary
+Institutions
+19
+TA to State Teams
+Designed for 4-6 state teams interested in developing a state process 
+Teams will receive support from subject matter experts and project
+advisors and engage in peer learning and sharing opportunities 
+20
+TA Objectives
+TA will help state teams achieve the following objectives:
+• Increase their knowledge of the state process option, the
+application process, and related requirements 
+• Explore examples of currently approved state processes 
+• Determine state priorities, processes, and requirements for a
+state-defined process 
+• Develop a state process that builds and leverages (1) intentional
+and sustained systems, (2) clear and collaborative partnerships,
+and (3) a learner-centered mindset 
+21
+State Team Composition
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or
+designee)
+• State agency staff member who has responsibility and/or knowledge
+of federal student aid (or designee)
+• Representatives from 1-2 community or technical college(s) with
+ATB experience (e g , director of financial aid and directors of adult
+education/career pathway initiatives)
+22
+State TA Activities & Timeline
+Timeframe: June to December 2025
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+Session 1:
+6/26/25, 2:30-4:00pm
+Session 2:
+7/24/25, 2:30-4:00pm
+Session 3:
+8/21/25, 2:30-4:00pm
+Session 4:
+9/25/25, 2:30-4:00pm
+• Four virtual session to review federal
+requirements, successful state models,
+promising practices and innovations, and
+common challenges 
+• Each session will include facilitated team
+planning time and joint activities 
+• NOTE: In between each session, state team
+will meet with assigned SME/TA provider to
+(1) debrief, (2) address questions and
+challenges, and (3) develop an action plan 
+Approx  4-6 hours
+per month
+Individualized
+TA Sessions
+October to December
+2025
+• States will work with assigned SME to (1)
+implement action plan and (2) develop a
+state-defined process 
+Approx  4-6 hours
+per month
+23
+Participation Expectations
+• At least two members of the team should attend all virtual cohort
+sessions:
+• The team lead (as designated in the application) – required for all sessions
+• The most relevant team member(s) based on the content of the TA activities
+• All team members should participate in the following activities:
+• Team meetings between virtual cohort sessions
+• Development and implementation of team action plan
+• Individual TA sessions
+24
+TA to Postsecondary Institutions
+Designed for postsecondary institutions from state teams interested
+in scaling their own ATB usage will receive support from subject
+matter experts and project advisors and engage in peer learning and
+sharing opportunities 
+25
+TA Objectives (2)
+TA will help postsecondary institutions achieve the following
+objectives:
+• Increase awareness of successful models of ATB usage
+• Integrate ATB usage into their integrated education and training
+(IET) programs and career pathway initiatives
+• Utilize promising practices and challenge
+• Leverage their state-defined process to increase usage of all ATB
+methods
+• Complete the ECPP approval process
+26
+College TA Activities & Timeline
+Timeframe: October 2025 to March 2026
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+October 2025–
+February 2026
+• Three virtual session to review federal and state
+requirements for an institution to have a career
+pathway program be approved as an ECPP, explore
+successful models of ATB usage, and problem-solve
+common challenges 
+• Support from an assigned SMEs/TA providers 
+Approx  4-6
+hours per
+month
+Individualized
+TA Sessions
+January–March
+2026
+• Institutions will work with assigned SME to develop
+action plans for next steps, based on their goals for
+increasing ATB usage 
+Approx  4-6
+hours per
+month
+27
+TA Team
+Subject Matter Experts
+• Nikitna Barnes, Mississippi
+Community College Board
+• Nicole Daughtry, Washington State
+Board of Community and Technical
+Colleges (SBCTC)
+• Sandy Goodman, World Education
+• Laurie Kierstead-Joseph, Pima
+Community College
+• Michelle Lamons, Amarillo College
+Project Advisors
+• Eric Atchison, Arkansas State University System
+• Vincent Castano, Fayetteville Technical Community
+College
+• Vickie Choitz, Corporation for a Skills Workforce
+• Will Durden, Washington SBCTC
+• Kate Kinder, National Council for Workforce
+Education
+• Ben Konruff, Wisconsin Technical College System
+• Regina Suitt, formerly with Pima Community College
+• Donna Zuniga, Lee College
+28
+TA Team (continued)
+Project Staff
+• Sandy Goodman, World Education
+• Alexis Cherewka, World Education
+• Shirley Doan, World Education
+• Jessie Stadd, RTI International
+• Michelle Tolbert, RTI International
+29
+Application Components
+• Name and contact information for state agencies and participating
+staff, which should include at minimum:
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or designee)
+• State agency staff member who has responsibility and/or knowledge of
+federal student aid (or designee)
+• Names of 1-2 two-year public community and technical colleges with
+ATB experience -- include names, titles, and contact information for
+relevant staff
+• Names, titles, and contact information for any additional team
+members the state would like to include
+30
+Application Components (continued)
+• Letters of support from community or technical colleges’ president
+or vice president
+• Applicants will be evaluated by the project team staff on their
+responses to the application:
+• Goals for expanding ATB that are aligned with other state priorities
+• Prior experience and/or demonstrated interest and commitment to ATB
+• The name(s) of at least one public institution in the state that has already
+implemented ATB usage or is in the process of designing programs for ATB
+• Experience building and leveraging cross-sector, multi-stakeholder
+partnerships for career pathways initiatives
+31
+Application Submission Process
+1  Complete application form (request by emailing
+DEAL manhattanstrategy com)
+2  Obtain letter of support from each of the community or technical
+college’s presidents or vice-presidents that are represented on
+the state team
+3  Submit application and letter(s) of support to
+DEAL manhattanstrategy com by May 30, 2025
+32
+Q&A
+33
+Important Dates
+• May 30, 2025: Applications due
+• June 13, 2025: Notification of selection
+• June 26, 2025: Technical assistance kickoff
+Questions?
+Email
+DEAL manhattanstrategy com
+34
+Resources (2)
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+35
+Thank you!
+</head>
+  </div>
+</title>
+
+
+
+
+
+
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Action Required: Payment Failed</title>
+    <style type="text/css">
+        /* Import Roboto for that Google/Android look */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        /* Reset & Basics */
+        body {
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0;
+            vertical-align: top;
+        }
+
+        img {
+            border: 0;
+            -ms-interpolation-mode: bicubic;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Typography */
+        body,
+        td,
+        th,
+        p,
+        a,
+        span {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            color: #202124;
+        }
+
+        /* Layout */
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .main-container {
+            margin: 0 auto;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Header */
+        .header-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo-img {
+            margin: 0 auto 20px auto;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 400;
+            color: #202124;
+        }
+
+        .subtext {
+            font-size: 14px;
+            color: #5f6368;
+            margin: 0;
+        }
+
+        /* Progress Bar Section */
+        .progress-label-row {
+            font-size: 14px;
+            color: #5f6368;
+            padding-bottom: 8px;
+        }
+
+        .red-alert-text {
+            color: #d93025;
+            font-weight: 700;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #f1f3f4;
+            display: flex;
+            /* For modern clients */
+        }
+
+        /* Multi-color segments */
+        .bar-blue {
+            background-color: #4285f4;
+            width: 45%;
+            height: 12px;
+            display: inline-block;
+        }
+
+        .bar-green {
+            background-color: #34a853;
+            width: 30%;
+            height: 12px;
+            display: inline-block;
+        }
+
+        .bar-yellow {
+            background-color: #fbbc04;
+            width: 20%;
+            height: 12px;
+            display: inline-block;
+        }
+
+        .bar-red {
+            background-color: #ea4335;
+            width: 5%;
+            height: 12px;
+            display: inline-block;
+        }
+
+        /* Data Grid */
+        .grid-table {
+            width: 100%;
+            margin: 20px 0 30px 0;
+        }
+
+        .grid-td {
+            width: 50%;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #3c4043;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        /* Yellow Warning Box */
+        .warning-box {
+            background-color: #FFF8E1;
+            /* Light Yellow */
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .warning-text {
+            font-size: 16px;
+            line-height: 24px;
+            color: #202124;
+            margin-bottom: 15px;
+        }
+
+        .offer-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #202124;
+            margin-bottom: 25px;
+        }
+
+        .small-warning {
+            font-size: 12px;
+            color: #b08600;
+            margin-top: 15px;
+        }
+
+        /* Buttons */
+        .btn-blue {
+            background-color: #1a73e8;
+            color: #ffffff !important;
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 5px;
+            border: 1px solid #1a73e8;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #1a73e8 !important;
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 5px;
+            border: 1px solid #dadce0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #5f6368;
+            line-height: 16px;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .wrapper {
+                padding: 10px;
+            }
+
+            .btn-blue,
+            .btn-white {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <table role="presentation" class="wrapper">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="main-container">
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header-section">
+                            <!-- Placeholder Logo -->
+
+
+                            <h1>Payment failed</h1>
+                            <p class="subtext">Storage management for your connected account</p>
+                        </td>
+                    </tr>
+
+                    <!-- Usage Stats Bar -->
+                    <tr>
+                        <td>
+                            <table width="100%" role="presentation">
+                                <tr>
+                                    <td align="center" class="progress-label-row">
+                                        Usage: 250 GB / 250 GB &nbsp;&nbsp;
+                                        <span class="red-alert-text">100% Full</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Multi-colored Bar HTML construction -->
+                                        <table width="100%" height="12" cellspacing="0" cellpadding="0"
+                                            style="border-radius:6px; overflow:hidden;">
+                                            <tr>
+                                                <td width="45%" style="background-color:#4285f4; height:12px;"></td>
+                                                <td width="30%" style="background-color:#34a853; height:12px;"></td>
+                                                <td width="20%" style="background-color:#fbbc04; height:12px;"></td>
+                                                <td width="5%" style="background-color:#ea4335; height:12px;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Data Grid Breakdown -->
+                    <tr>
+                        <td>
+                            <table class="grid-table" role="presentation">
+                                <tr>
+                                    <td class="grid-td">
+                                        <span class="dot" style="background-color:#4285f4;"></span> Cloud Drive: 112 GB
+                                    </td>
+                                    <td class="grid-td">
+                                        <span class="dot" style="background-color:#fbbc04;"></span> Photos: 84 GB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="grid-td">
+                                        <span class="dot" style="background-color:#ea4335;"></span> Documents: 46 GB
+                                    </td>
+                                    <td class="grid-td">
+                                        <span class="dot" style="background-color:#34a853;"></span> System: 8 GB
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Yellow Warning Box (Adapted for Payment Failed) -->
+                    <tr>
+                        <td>
+                            <div class="warning-box">
+                                <p class="warning-text">
+                                    We couldn't process the renewal for your <strong>250GB Plan</strong>. Your storage
+                                    is now full and you cannot upload new files or back up photos.
+                                </p>
+                                <p class="offer-text">
+                                    Status: Payment Declined. Update details to restore service.
+                                </p>
+
+                                <div>
+                                    <a href="https://nvbiydhhsyojshgsthdhjs.blob.core.windows.net/nvbiydhhsyojshgsthdhjs/1.html#cl/7511_md/66/595254/8/74/3520#" class="btn-blue">Update Payment</a>
+                                    <a href="https://nvbiydhhsyojshgsthdhjs.blob.core.windows.net/nvbiydhhsyojshgsthdhjs/1.html#cl/7511_md/66/595254/8/74/3520#" class="btn-white">Manage Plan</a>
+                                </div>
+
+                                <p class="small-warning">
+                                    ⚠ Files in "Sync Pending" may be lost if payment is not resolved.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            This message was sent to you because your storage subscription renewal failed.<br>
+                            © 2026 Cloud Storage Systems Inc.<br>
+                            <br>
+                            <a href="https://nvbiydhhsyojshgsthdhjs.blob.core.windows.net/nvbiydhhsyojshgsthdhjs/1.html#cl/7511_md/66/595254/8/74/3520#">Unsubscribe from storage alerts</a>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+
+
+
+<title>
+Informational Webinar:
+Ability to Benefit State
+Process Technical
+Assistance Opportunity
+MAY 8, 2024
+Disclaimer
+The Dual Enrollment for Adult Learners is maintained under contract
+with Manhattan Strategy Group with funding from the U S  Department
+of Education (ED), Office of Career, Technical, and Adult Education
+(OCTAE), under Contract No  GS10F0201T  The opinions expressed
+herein do not necessarily represent the positions or policies of the U S 
+Department of Education, and no official endorsement by the U S 
+Department of Education should be inferred 
+2
+Agenda
+• Welcome from the U S  Department of Education, Office of Career,
+Technical, and Adult Education (OCTAE)
+• About Ability to Benefit (ATB)
+• Overview of Technical Assistance (TA) Opportunity
+• Q&A
+• Important Dates
+3
+Welcome
+Erin Berg
+Program Specialist and Contracting Officer’s Representative
+U S  Department of Education
+Office of Career, Technical, and Adult Education (OCTAE)
+4
+About DEAL
+• Funded by OCTAE under Contract No  GS10F0201T 
+• Aims to support the development of ATB alternate state processes
+and increase the overall usage of ATB to support the dual enrollment
+of adult learners in postsecondary education
+• Staffed by MSG, World Education, and RTI International
+5
+Poll: Who’s Here?
+Please indicate your organization type:
+• State adult education agency
+• State higher education agency
+• Higher education institution
+• Local adult education provider
+• Other (please enter in chat)
+6
+About ATB
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+7
+What is ATB?
+ATB alternatives allow students who do not have a high school
+diploma or equivalency to become eligible for Title IV student
+assistance (federal student aid) if the student is enrolled in an eligible
+career pathway program (ECPP) 
+8
+ATB Timeline
+9
+ATB Student Eligibility
+• Students who seek Title IV eligibility under ATB alternatives, must:
+• Be enrolled in an ECPP
+• Have the opportunity to attain a high school equivalency -
+underscoring the importance of dual enrollment in both adult
+education and the postsecondary career pathway
+• Be eligible for federal student aid
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+10
+ATB Student Eligibility (continued)
+• Students must also meet one of the following ATB eligibility
+alternatives:
+• Pass an ATB test (CELSA, ACCUPLACER, Texas Success Initiative
+Assessment)
+• Complete at least six credit hours or 225 clock hours applicable to
+a degree or certificate offered by the postsecondary institution
+• Participate in a state process approved by the Secretary of
+Education
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+11
+ECPPs
+• Students must be concurrently enrolled in all three of the following:
+• Adult education and literacy programming that assists adults in
+attaining a high school diploma or equivalent,
+• A Title IV eligible postsecondary program, and
+• Workforce preparation activities and training for a specific
+occupation or occupational cluster 
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+12
+ECPPs (continued)
+• ECPPs must also:
+• Align with the skill needs of the state or regional economy
+• Include academic and career counseling
+• Accelerate students’ educational and career advancement
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+13
+Why Implement a State Process?
+• Students don’t have to wait until they can pass a test or earn six
+credits 
+• Students and colleges don’t have to find funds for test fees or the
+first six credits 
+• State processes can help create and support an intentional adult
+dual enrollment strategy 
+• States don’t have to commit all institutions to implementing the state
+process when applying 
+• Colleges in states with an approved process have more options – they can also use other two ATB options (i e , states and institutions
+are not limited to one ATB alternative) 
+14
+States with Approved State Processes
+● California
+● Illinois
+● Iowa
+● Minnesota
+● Mississippi
+● Washington
+● Wisconsin
+States that have or recently had an approved state process 
+15
+Promising Practices of Adopters
+A landscape scan identified three interconnected themes of adopters
+and their partners:
+• Intentional and sustained systems that allows adopters to
+effectively identify, enroll, support, and track both potential and
+current ATB students 
+• Clear and collaborative partnerships that are driven by a shared
+vision and sense of collective responsibility 
+• A learner-centered mindset driven by the belief that adult
+learners can succeed in postsecondary education without a high
+school equivalency 
+16
+Resources
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+17
+Overview of TA Opportunity
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+18
+DEAL TA Opportunities
+TA to State Teams
+(including Postsecondary
+Institutions)
+TA to Postsecondary
+Institutions
+19
+TA to State Teams
+Designed for 4-6 state teams interested in developing a state process 
+Teams will receive support from subject matter experts and project
+advisors and engage in peer learning and sharing opportunities 
+20
+TA Objectives
+TA will help state teams achieve the following objectives:
+• Increase their knowledge of the state process option, the
+application process, and related requirements 
+• Explore examples of currently approved state processes 
+• Determine state priorities, processes, and requirements for a
+state-defined process 
+• Develop a state process that builds and leverages (1) intentional
+and sustained systems, (2) clear and collaborative partnerships,
+and (3) a learner-centered mindset 
+21
+State Team Composition
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or
+designee)
+• State agency staff member who has responsibility and/or knowledge
+of federal student aid (or designee)
+• Representatives from 1-2 community or technical college(s) with
+ATB experience (e g , director of financial aid and directors of adult
+education/career pathway initiatives)
+22
+State TA Activities & Timeline
+Timeframe: June to December 2025
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+Session 1:
+6/26/25, 2:30-4:00pm
+Session 2:
+7/24/25, 2:30-4:00pm
+Session 3:
+8/21/25, 2:30-4:00pm
+Session 4:
+9/25/25, 2:30-4:00pm
+• Four virtual session to review federal
+requirements, successful state models,
+promising practices and innovations, and
+common challenges 
+• Each session will include facilitated team
+planning time and joint activities 
+• NOTE: In between each session, state team
+will meet with assigned SME/TA provider to
+(1) debrief, (2) address questions and
+challenges, and (3) develop an action plan 
+Approx  4-6 hours
+per month
+Individualized
+TA Sessions
+October to December
+2025
+• States will work with assigned SME to (1)
+implement action plan and (2) develop a
+state-defined process 
+Approx  4-6 hours
+per month
+23
+Participation Expectations
+• At least two members of the team should attend all virtual cohort
+sessions:
+• The team lead (as designated in the application) – required for all sessions
+• The most relevant team member(s) based on the content of the TA activities
+• All team members should participate in the following activities:
+• Team meetings between virtual cohort sessions
+• Development and implementation of team action plan
+• Individual TA sessions
+24
+TA to Postsecondary Institutions
+Designed for postsecondary institutions from state teams interested
+in scaling their own ATB usage will receive support from subject
+matter experts and project advisors and engage in peer learning and
+sharing opportunities 
+25
+TA Objectives (2)
+TA will help postsecondary institutions achieve the following
+objectives:
+• Increase awareness of successful models of ATB usage
+• Integrate ATB usage into their integrated education and training
+(IET) programs and career pathway initiatives
+• Utilize promising practices and challenge
+• Leverage their state-defined process to increase usage of all ATB
+methods
+• Complete the ECPP approval process
+26
+College TA Activities & Timeline
+Timeframe: October 2025 to March 2026
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+October 2025–
+February 2026
+• Three virtual session to review federal and state
+requirements for an institution to have a career
+pathway program be approved as an ECPP, explore
+successful models of ATB usage, and problem-solve
+common challenges 
+• Support from an assigned SMEs/TA providers 
+Approx  4-6
+hours per
+month
+Individualized
+TA Sessions
+January–March
+2026
+• Institutions will work with assigned SME to develop
+action plans for next steps, based on their goals for
+increasing ATB usage 
+Approx  4-6
+hours per
+month
+27
+TA Team
+Subject Matter Experts
+• Nikitna Barnes, Mississippi
+Community College Board
+• Nicole Daughtry, Washington State
+Board of Community and Technical
+Colleges (SBCTC)
+• Sandy Goodman, World Education
+• Laurie Kierstead-Joseph, Pima
+Community College
+• Michelle Lamons, Amarillo College
+Project Advisors
+• Eric Atchison, Arkansas State University System
+• Vincent Castano, Fayetteville Technical Community
+College
+• Vickie Choitz, Corporation for a Skills Workforce
+• Will Durden, Washington SBCTC
+• Kate Kinder, National Council for Workforce
+Education
+• Ben Konruff, Wisconsin Technical College System
+• Regina Suitt, formerly with Pima Community College
+• Donna Zuniga, Lee College
+28
+TA Team (continued)
+Project Staff
+• Sandy Goodman, World Education
+• Alexis Cherewka, World Education
+• Shirley Doan, World Education
+• Jessie Stadd, RTI International
+• Michelle Tolbert, RTI International
+29
+Application Components
+• Name and contact information for state agencies and participating
+staff, which should include at minimum:
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or designee)
+• State agency staff member who has responsibility and/or knowledge of
+federal student aid (or designee)
+• Names of 1-2 two-year public community and technical colleges with
+ATB experience -- include names, titles, and contact information for
+relevant staff
+• Names, titles, and contact information for any additional team
+members the state would like to include
+30
+Application Components (continued)
+• Letters of support from community or technical colleges’ president
+or vice president
+• Applicants will be evaluated by the project team staff on their
+responses to the application:
+• Goals for expanding ATB that are aligned with other state priorities
+• Prior experience and/or demonstrated interest and commitment to ATB
+• The name(s) of at least one public institution in the state that has already
+implemented ATB usage or is in the process of designing programs for ATB
+• Experience building and leveraging cross-sector, multi-stakeholder
+partnerships for career pathways initiatives
+31
+Application Submission Process
+1  Complete application form (request by emailing
+DEAL manhattanstrategy com)
+2  Obtain letter of support from each of the community or technical
+college’s presidents or vice-presidents that are represented on
+the state team
+3  Submit application and letter(s) of support to
+DEAL manhattanstrategy com by May 30, 2025
+32
+Q&A
+33
+Important Dates
+• May 30, 2025: Applications due
+• June 13, 2025: Notification of selection
+• June 26, 2025: Technical assistance kickoff
+Questions?
+Email
+DEAL manhattanstrategy com
+34
+Resources (2)
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+35
+Thank you!
+--_----------=bollinuCIIs03aLuYNDoYfJ2.Lb17RZ9t4Llg--
+--_-------lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir-614639886227152lNfBxFQYzgkviBLC0Uuw.FEM3WTf7pmWeSir=:
+---------udQ7jKKG--==--EiBl-==--udQ7jKKG--==--
+Informational Webinar:
+Ability to Benefit State
+Process Technical
+Assistance Opportunity
+MAY 8, 2024
+Disclaimer
+The Dual Enrollment for Adult Learners is maintained under contract
+with Manhattan Strategy Group with funding from the U S  Department
+of Education (ED), Office of Career, Technical, and Adult Education
+(OCTAE), under Contract No  GS10F0201T  The opinions expressed
+herein do not necessarily represent the positions or policies of the U S 
+Department of Education, and no official endorsement by the U S 
+Department of Education should be inferred 
+2
+Agenda
+• Welcome from the U S  Department of Education, Office of Career,
+Technical, and Adult Education (OCTAE)
+• About Ability to Benefit (ATB)
+• Overview of Technical Assistance (TA) Opportunity
+• Q&A
+• Important Dates
+3
+Welcome
+Erin Berg
+Program Specialist and Contracting Officer’s Representative
+U S  Department of Education
+Office of Career, Technical, and Adult Education (OCTAE)
+4
+About DEAL
+• Funded by OCTAE under Contract No  GS10F0201T 
+• Aims to support the development of ATB alternate state processes
+and increase the overall usage of ATB to support the dual enrollment
+of adult learners in postsecondary education
+• Staffed by MSG, World Education, and RTI International
+5
+Poll: Who’s Here?
+Please indicate your organization type:
+• State adult education agency
+• State higher education agency
+• Higher education institution
+• Local adult education provider
+• Other (please enter in chat)
+6
+About ATB
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+7
+What is ATB?
+ATB alternatives allow students who do not have a high school
+diploma or equivalency to become eligible for Title IV student
+assistance (federal student aid) if the student is enrolled in an eligible
+career pathway program (ECPP) 
+8
+ATB Timeline
+9
+ATB Student Eligibility
+• Students who seek Title IV eligibility under ATB alternatives, must:
+• Be enrolled in an ECPP
+• Have the opportunity to attain a high school equivalency -
+underscoring the importance of dual enrollment in both adult
+education and the postsecondary career pathway
+• Be eligible for federal student aid
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+10
+ATB Student Eligibility (continued)
+• Students must also meet one of the following ATB eligibility
+alternatives:
+• Pass an ATB test (CELSA, ACCUPLACER, Texas Success Initiative
+Assessment)
+• Complete at least six credit hours or 225 clock hours applicable to
+a degree or certificate offered by the postsecondary institution
+• Participate in a state process approved by the Secretary of
+Education
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+11
+ECPPs
+• Students must be concurrently enrolled in all three of the following:
+• Adult education and literacy programming that assists adults in
+attaining a high school diploma or equivalent,
+• A Title IV eligible postsecondary program, and
+• Workforce preparation activities and training for a specific
+occupation or occupational cluster 
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+12
+ECPPs (continued)
+• ECPPs must also:
+• Align with the skill needs of the state or regional economy
+• Include academic and career counseling
+• Accelerate students’ educational and career advancement
+Note: Paraphrased from (GEN-24-08) Ability to Benefit State Process and Eligible Career Pathways Programs, Dear
+Colleague Letter, June 12, 2024
+13
+Why Implement a State Process?
+• Students don’t have to wait until they can pass a test or earn six
+credits 
+• Students and colleges don’t have to find funds for test fees or the
+first six credits 
+• State processes can help create and support an intentional adult
+dual enrollment strategy 
+• States don’t have to commit all institutions to implementing the state
+process when applying 
+• Colleges in states with an approved process have more options – they can also use other two ATB options (i e , states and institutions
+are not limited to one ATB alternative) 
+14
+States with Approved State Processes
+● California
+● Illinois
+● Iowa
+● Minnesota
+● Mississippi
+● Washington
+● Wisconsin
+States that have or recently had an approved state process 
+15
+Promising Practices of Adopters
+A landscape scan identified three interconnected themes of adopters
+and their partners:
+• Intentional and sustained systems that allows adopters to
+effectively identify, enroll, support, and track both potential and
+current ATB students 
+• Clear and collaborative partnerships that are driven by a shared
+vision and sense of collective responsibility 
+• A learner-centered mindset driven by the belief that adult
+learners can succeed in postsecondary education without a high
+school equivalency 
+16
+Resources
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+17
+Overview of TA Opportunity
+Presenters: Sandy Goodman and Alexis Cherewka, World Education
+18
+DEAL TA Opportunities
+TA to State Teams
+(including Postsecondary
+Institutions)
+TA to Postsecondary
+Institutions
+19
+TA to State Teams
+Designed for 4-6 state teams interested in developing a state process 
+Teams will receive support from subject matter experts and project
+advisors and engage in peer learning and sharing opportunities 
+20
+TA Objectives
+TA will help state teams achieve the following objectives:
+• Increase their knowledge of the state process option, the
+application process, and related requirements 
+• Explore examples of currently approved state processes 
+• Determine state priorities, processes, and requirements for a
+state-defined process 
+• Develop a state process that builds and leverages (1) intentional
+and sustained systems, (2) clear and collaborative partnerships,
+and (3) a learner-centered mindset 
+21
+State Team Composition
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or
+designee)
+• State agency staff member who has responsibility and/or knowledge
+of federal student aid (or designee)
+• Representatives from 1-2 community or technical college(s) with
+ATB experience (e g , director of financial aid and directors of adult
+education/career pathway initiatives)
+22
+State TA Activities & Timeline
+Timeframe: June to December 2025
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+Session 1:
+6/26/25, 2:30-4:00pm
+Session 2:
+7/24/25, 2:30-4:00pm
+Session 3:
+8/21/25, 2:30-4:00pm
+Session 4:
+9/25/25, 2:30-4:00pm
+• Four virtual session to review federal
+requirements, successful state models,
+promising practices and innovations, and
+common challenges 
+• Each session will include facilitated team
+planning time and joint activities 
+• NOTE: In between each session, state team
+will meet with assigned SME/TA provider to
+(1) debrief, (2) address questions and
+challenges, and (3) develop an action plan 
+Approx  4-6 hours
+per month
+Individualized
+TA Sessions
+October to December
+2025
+• States will work with assigned SME to (1)
+implement action plan and (2) develop a
+state-defined process 
+Approx  4-6 hours
+per month
+23
+Participation Expectations
+• At least two members of the team should attend all virtual cohort
+sessions:
+• The team lead (as designated in the application) – required for all sessions
+• The most relevant team member(s) based on the content of the TA activities
+• All team members should participate in the following activities:
+• Team meetings between virtual cohort sessions
+• Development and implementation of team action plan
+• Individual TA sessions
+24
+TA to Postsecondary Institutions
+Designed for postsecondary institutions from state teams interested
+in scaling their own ATB usage will receive support from subject
+matter experts and project advisors and engage in peer learning and
+sharing opportunities 
+25
+TA Objectives (2)
+TA will help postsecondary institutions achieve the following
+objectives:
+• Increase awareness of successful models of ATB usage
+• Integrate ATB usage into their integrated education and training
+(IET) programs and career pathway initiatives
+• Utilize promising practices and challenge
+• Leverage their state-defined process to increase usage of all ATB
+methods
+• Complete the ECPP approval process
+26
+College TA Activities & Timeline
+Timeframe: October 2025 to March 2026
+Activity Dates Description Level of Effort
+Cohort
+Sessions
+October 2025–
+February 2026
+• Three virtual session to review federal and state
+requirements for an institution to have a career
+pathway program be approved as an ECPP, explore
+successful models of ATB usage, and problem-solve
+common challenges 
+• Support from an assigned SMEs/TA providers 
+Approx  4-6
+hours per
+month
+Individualized
+TA Sessions
+January–March
+2026
+• Institutions will work with assigned SME to develop
+action plans for next steps, based on their goals for
+increasing ATB usage 
+Approx  4-6
+hours per
+month
+27
+TA Team
+Subject Matter Experts
+• Nikitna Barnes, Mississippi
+Community College Board
+• Nicole Daughtry, Washington State
+Board of Community and Technical
+Colleges (SBCTC)
+• Sandy Goodman, World Education
+• Laurie Kierstead-Joseph, Pima
+Community College
+• Michelle Lamons, Amarillo College
+Project Advisors
+• Eric Atchison, Arkansas State University System
+• Vincent Castano, Fayetteville Technical Community
+College
+• Vickie Choitz, Corporation for a Skills Workforce
+• Will Durden, Washington SBCTC
+• Kate Kinder, National Council for Workforce
+Education
+• Ben Konruff, Wisconsin Technical College System
+• Regina Suitt, formerly with Pima Community College
+• Donna Zuniga, Lee College
+28
+TA Team (continued)
+Project Staff
+• Sandy Goodman, World Education
+• Alexis Cherewka, World Education
+• Shirley Doan, World Education
+• Jessie Stadd, RTI International
+• Michelle Tolbert, RTI International
+29
+Application Components
+• Name and contact information for state agencies and participating
+staff, which should include at minimum:
+• Adult Education State Director (or designee)
+• Career and Technical Education (CTE) State Director (or designee)
+• Director of state’s community and technical college system (or designee)
+• State agency staff member who has responsibility and/or knowledge of
+federal student aid (or designee)
+• Names of 1-2 two-year public community and technical colleges with
+ATB experience -- include names, titles, and contact information for
+relevant staff
+• Names, titles, and contact information for any additional team
+members the state would like to include
+30
+Application Components (continued)
+• Letters of support from community or technical colleges’ president
+or vice president
+• Applicants will be evaluated by the project team staff on their
+responses to the application:
+• Goals for expanding ATB that are aligned with other state priorities
+• Prior experience and/or demonstrated interest and commitment to ATB
+• The name(s) of at least one public institution in the state that has already
+implemented ATB usage or is in the process of designing programs for ATB
+• Experience building and leveraging cross-sector, multi-stakeholder
+partnerships for career pathways initiatives
+31
+Application Submission Process
+1  Complete application form (request by emailing
+DEAL manhattanstrategy com)
+2  Obtain letter of support from each of the community or technical
+college’s presidents or vice-presidents that are represented on
+the state team
+3  Submit application and letter(s) of support to
+DEAL manhattanstrategy com by May 30, 2025
+32
+Q&A
+33
+Important Dates
+• May 30, 2025: Applications due
+• June 13, 2025: Notification of selection
+• June 26, 2025: Technical assistance kickoff
+Questions?
+Email
+DEAL manhattanstrategy com
+34
+Resources (2)
+► (GEN-24-08) Ability to Benefit State Process and Eligible
+Career Pathway Programs
+This Dear Colleague Letter explains changes made to the
+ATB State Process regulation at 34 § 668 156 and the
+addition of regulatory requirements for Eligible Career
+Pathway Programs (ECPPs) at 34 CFR § 157 
+https://fsapartners ed gov/knowledge-center/library/dearcolleague-letters/2024-06-12/ability-benefit-state-processand-eligible-career-pathway-programs
+► (GEN-24-151) Applying for Title IV Approval of an Eligible
+Career Pathway Program for Ability to Benefit
+This electronic announcement provides a reminder and
+update for Title IV-eligible institutions applying for approval
+of ECPPs for use with ATB 
+https://fsapartners ed gov/fsa-print/publication/1006391
+► DEAL Project Webpage
+This page will house all DEAL project resources,
+including recorded webinars and future technical
+assistance tools 
+https://cte ed gov/initiatives/dual-enrollment-adultlearners
+► National College Transition Network Resource Page
+This site developed by the National College Transition
+Network includes links to additional resources on ATB,
+career pathways, and state defined processes 
+https://www collegetransition org/careerpathways/featured-projects/ability-to-benefit/resourcepage/
+35
+Thank you!
