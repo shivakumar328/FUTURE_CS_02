@@ -1,0 +1,269 @@
+Delivered-To: devisavitri751@gmail.com
+Received: by 2002:a2e:8182:0:b0:38a:44d7:df84 with SMTP id e2csp62186ljg;
+        Tue, 17 Mar 2026 23:20:31 -0700 (PDT)
+X-Received: by 2002:a17:907:746:b0:b86:fca7:3dc2 with SMTP id a640c23a62f3a-b97f4796cb6mr127563566b.10.1773814831583;
+        Tue, 17 Mar 2026 23:20:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1773814831; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PtEGQMXb3EJktmaKV/ES2Ea+b9e0FZsVIgkjeiTRZRAoPUHi52a2e4xqFH+1GOWF2D
+         iYTnUbb8M2iiPHb9tZ82629qxnIfyUO2qRrQ3/fXn0RKoQfJpHhqdrNef2PL5Nk9cSa1
+         BSPJiHwYVAUtUVm/aW7zOzLbsndJ3Bne1XtePRfAshIy9nxYo8MDbyOE7pDhyLWoMmuu
+         WpqSTpVEFIXdt8ornX0lQuF5MzXDDq4rWE52nx6m+mtwwTRYSQuQPO9beVqjfce65pjF
+         a5zz/idMf+WERcjMgdaJzVlNrX04/QBV9Dpvgd1rPAt8R3I1sd3ONT/+QrcQopJBAJii
+         HaBg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:feedback-id:list-unsubscribe-post:list-unsubscribe
+         :reply-to:to:from:subject:message-id:date:dkim-signature;
+        bh=ptH0ULCtqN07AMXcG/Ux6xsA2HvRWi7y1EczBDhdix4=;
+        fh=UggVSbID5JaUSmh28dXD/aWoTR37LdmEk9soLxjS3AE=;
+        b=USURp7XlAkqQpjJFCqV4RTQiuqM0b+/ZNcM7C0WGtD3xan/Gb50NxsMTzC4RiZDTjU
+         9lkKknSLfGKMKJhaUN5bv+CIyyj3e8pXN4i+wrkz5KQ6J6WV/eolN7ihiBd1PZ87iRUG
+         jwSq+PIcaY3YZSvEJFmiuBnucDlEml1c+rehj0enGTDv6+S7Le8mRWVUdu5ZAPOy+tcZ
+         AmiqSzavWgeQh6q+Ndk6AJ76rmDLn3Q+OCqkhE3iFy283HnQNunPZ5Xw8ZtggXg0tw0T
+         E/lUtEXr0tU9AcrcIQG+aoXYn3EbVTjTRpUzBAkmVO8vj7DkC38/Pt63C8bFSoYUdrOD
+         2T8w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@freshersindia.in header.s=k1 header.b=KCrDYvxF;
+       spf=pass (google.com: domain of bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in designates 103.147.104.202 as permitted sender) smtp.mailfrom=bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=freshersindia.in
+Return-Path: <bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in>
+Received: from mail.mc1202.mlrcd.com (mail.mc1202.mlrcd.com. [103.147.104.202])
+        by mx.google.com with ESMTPS id a640c23a62f3a-b97f14d5cf5si158294766b.60.2026.03.17.23.20.31
+        for <devisavitri751@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Tue, 17 Mar 2026 23:20:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in designates 103.147.104.202 as permitted sender) client-ip=103.147.104.202;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@freshersindia.in header.s=k1 header.b=KCrDYvxF;
+       spf=pass (google.com: domain of bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in designates 103.147.104.202 as permitted sender) smtp.mailfrom=bounce.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=freshersindia.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=k1; d=freshersindia.in; t=1773814623; h=subject:from:to;
+ bh=npCN6d7S5udM++lXRtGptghIH7NfRToykCe5GbetIJA=;
+ b=KCrDYvxFtj2ZqSJAOmWoKCa8KqajaDwG8q2m7khesAesEn/ylgyd0YJ7nXVWwgsEIMmgiv
+ dLGpl5xetgh0isNokX0z/y653YVphC562NaiSE28b8Du9//jQDJO6/OUbx4dvuP64t8oak
+ kjMZ7/Ue+upLNmDib3Hc7BDR48Fqw8RW7BsZbTHXyQ5Xp893AHU4/C5L68ZaZmIjB0kOd4
+ k7i+/nrCVTtPPARBvrfZ/GMEPbOzf1biWqzOOcN3xGmdD8EIWRsdNC3NilE56MRtsEQjGx
+ VSrRgS4+3I5m3KfFu+wc1VkMaDUsK1nw6S1H/A2ikUxjJ3Ub1/cJL5mtcKiJVw==
+Date: Wed, 18 Mar 2026 06:17:03 +0000
+Message-ID: <1773814623-MjE5ODA5MDI4Mi0xNDgwNDYx@mc.freshersindia.in>
+Subject: =?UTF-8?q?Congratulations!_You=E2=80=99ve_Been_Selected_for_DELOITTE_-_Yo?=
+ =?UTF-8?q?ur_Application_has_been_processed?=
+From: "Interview Call" <sanjoli.raj@freshersindia.in>
+To: devisavitri751@gmail.com
+Reply-To: sanjoli.raj@freshersindia.in
+List-Unsubscribe: <https://mc.freshersindia.in/us/CuajjnSsbChMkeIaeGbMcbZyAZacIsMKEiAEGBRxZffMvvyvFMSVYjJlBMCagKMKViAeWBMsfxGBMb>,
+ <mailto:unsub.cli23099-1480461-1480461-2198090282-7955-25751-44845-66-p2061-1-gmail-1480461@mc.freshersindia.in?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-campaignid: 1480461
+X-SentFromServer: 103.147.104.202
+X-Subscriber-ID: 2198090282
+Feedback-ID: 5520:2198090282:23099:freshersin
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary=f920873cb7198cb0042da7a75e185f486d1126f7ae0e8caa706a555295bc
+
+--f920873cb7198cb0042da7a75e185f486d1126f7ae0e8caa706a555295bc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+![image](https://u23099.csd.mlrcld.com/uploads/23099/2025-06-13/img-07-48-2=
+2-684bd7c61297b.png)
+
+**Genpact**=C2=A0( Video Call )=C2=A0Interview
+
+Qualification : Any Graduates
+
+Time: 12.00 to 1.00 PM
+
+Click Here for Interview Details
+
+**Note:=C2=A0If you don't want Email Alerts from us you can unsubscribe wit=
+h the below option.**
+--f920873cb7198cb0042da7a75e185f486d1126f7ae0e8caa706a555295bc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"> <head=
+> <meta charset=3D"UTF-8"> <meta content=3D"width=3Ddevice-width, initial-s=
+cale=3D1" name=3D"viewport"> <meta name=3D"x-apple-disable-message-reformat=
+ting"> <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta co=
+ntent=3D"telephone=3Dno" name=3D"format-detection"> <title>Congratulations!=
+ You=E2=80=99ve Been Selected for DELOITTE - Your Application has been proc=
+essed</title> <!--[if (mso 16)]> <style type=3D"text/css"> a {text-decorati=
+on: none;} </style> <![endif]--> <!--[if gte mso 9]><style>sup { font-size:=
+ 100% !important; }</style><![endif]--> <!--[if gte mso 9]> <xml> <o:Office=
+DocumentSettings> <o:AllowPNG></o:AllowPNG> <o:PixelsPerInch>96</o:PixelsPe=
+rInch> </o:OfficeDocumentSettings> </xml> <![endif]--> <style type=3D"text/=
+css">@import url("https://u23099.csd.mlrcld.com/uploads/fonts.css");</style=
+> <style type=3D"text/css"> .rollover:hover .rollover-first {max-height:0px=
+ !important;display:none !important;} .rollover:hover .rollover-second {max=
+-height:none !important;display:block !important;} #outlook a {padding:0;} =
+.ml-button {mso-style-priority:100 !important;text-decoration:none;} a[x-ap=
+ple-data-detectors] {color:inherit !important;text-decoration:none !importa=
+nt;font-size:inherit !important;font-family:inherit !important;font-weight:=
+inherit !important;line-height:inherit !important;} .ml-desk-hidden {displa=
+y:none;float:left;overflow:hidden;width:0;max-height:0;line-height:0;mso-hi=
+de:all;} [data-ogsb] .ml-button {border-width:0 !important;padding:10px 20p=
+x 10px 20px !important;} @media only screen and (max-width:600px) { .st-br =
+{padding-left:10px !important;padding-right:10px !important;} p, ul li, ol =
+li, a {line-height:150% !important;} h1 {font-size:30px !important;line-hei=
+ght:150% !important;} h2 {font-size:26px !important;line-height:150% !impor=
+tant;} h3 {font-size:20px !important;line-height:150% !important;} .ml-cont=
+ent-body h1 a {font-size:30px !important;} .ml-content-body h2 a {font-size=
+:26px !important;} .ml-content-body h3 a {font-size:20px !important;} .ml-m=
+enu td a {font-size:14px !important;} *[class=3D"gmail-fix"] {display:none =
+!important;} .ml-m-txt-c, .ml-m-txt-c h1, .ml-m-txt-c h2, .ml-m-txt-c h3 {t=
+ext-align:center !important;} .ml-m-txt-r, .ml-m-txt-r h1, .ml-m-txt-r h2, =
+.ml-m-txt-r h3 {text-align:right !important;} .ml-m-txt-l, .ml-m-txt-l h1, =
+.ml-m-txt-l h2, .ml-m-txt-l h3 {text-align:left !important;} .ml-m-txt-r im=
+g, .ml-m-txt-c img, .ml-m-txt-l img {display:inline !important;} .ml-button=
+-border {display:block !important;} a.ml-button, button.ml-button {display:=
+block !important;border-left-width:0px !important;border-right-width:0px !i=
+mportant;} .ml-adaptive table, .ml-left, .ml-right {width:100% !important;}=
+ .ml-content table, .ml-content {width:100% !important;max-width:600px !imp=
+ortant;} .ml-adapt-td {display:block !important;width:100% !important;} .ad=
+apt-img {width:100% !important;height:auto !important;} .ml-m-p0 {padding:0=
+ !important;} .ml-m-p0r {padding-right:0 !important;} .ml-m-p0l {padding-le=
+ft:0 !important;} .ml-m-p0t {padding-top:0 !important;} .ml-m-p0b {padding-=
+bottom:0 !important;} .ml-m-p20b {padding-bottom:20px !important;} .ml-mobi=
+le-hidden, .ml-hidden {display:none !important;} tr.ml-desk-hidden, td.ml-d=
+esk-hidden, table.ml-desk-hidden {width:auto !important;overflow:visible !i=
+mportant;float:none !important;max-height:inherit !important;line-height:in=
+herit !important;} tr.ml-desk-hidden {display:table-row !important;} table.=
+ml-desk-hidden {display:table !important;} td.ml-desk-menu-hidden {display:=
+table-cell !important;} .ml-menu td {width:1% !important;} table.ml-table-n=
+ot-adapt, .esd-block-html table {width:auto !important;} table.ml-smedia {d=
+isplay:inline-block !important;} table.ml-smedia td {display:inline-block !=
+important;} .mld-url-block {width:100% !important;} } </style> <!--[if gte =
+mso 12]> <style type=3D"text/css"> .mso-right { padding-left: 20px; } </sty=
+le> <![endif]--></head><body style=3D";width:100%;font-family:arial,'helvet=
+ica neue',helvetica,sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-=
+adjust:100%;padding:0;Margin:0"> <div bgcolor=3D"#F2F6F8" class=3D"ml-wrapp=
+er-color" style=3D"background-color: #f2f6f8;"><!--[if gte mso 9]> <v:backg=
+round xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t"> <v:fill type=3D=
+"tile" color=3D"#f2f6f8"></v:fill> </v:background> <![endif]--><table cells=
+pacing=3D"0" cellpadding=3D"0" role=3D"presentation" width=3D"100%" bgcolor=
+=3D"#f2f6f8" class=3D"ml-wrapper" style=3D"mso-table-lspace:0pt;mso-table-r=
+space:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;wi=
+dth:100%;height:100%"><tr><td valign=3D"top" class=3D"mld-email-paddings" s=
+tyle=3D"padding:0;Margin:0"><table cellspacing=3D"0" cellpadding=3D"0" role=
+=3D"presentation" width=3D"100%" align=3D"center" class=3D"ml-content" styl=
+e=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;bor=
+der-spacing:0px;table-layout:fixed !important;width:100%"><tbody><tr><td al=
+ign=3D"center" style=3D"Margin:0;padding:0px"><table cellspacing=3D"0" cell=
+padding=3D"0" role=3D"presentation" align=3D"center" width=3D"600" bgcolor=
+=3D"#FFFFFF" class=3D"ml-content-body" style=3D"mso-table-lspace:0pt;mso-ta=
+ble-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:600px;back=
+ground-color:#ffffff"><tbody><tr ><td align=3D"left" class=3D"mld-structure=
+" style=3D"Margin:0;padding:20px 20px 0px"><!--[if mso]><table style=3D"wid=
+th:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><![endif]--><!--[if mso]>=
+<td style=3D"width:560px" valign=3D"top"><![endif]--><table cellspacing=3D"=
+0" cellpadding=3D"0" role=3D"presentation" align=3D"left" class=3D"ml-left"=
+ style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collaps=
+e;border-spacing:0px;float:left"><tbody><tr class=3D"mld-container"><td ali=
+gn=3D"center" valign=3D"top" class=3D"ml-m-p20b" style=3D"Margin:0;margin:0=
+px;padding:0px;width:560px"><table cellspacing=3D"0" cellpadding=3D"0" role=
+=3D"presentation" width=3D"100%" style=3D"mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;border-spacing:0px;padding:0px;border-radius:0px;border-collapse:c=
+ollapse"><tr class=3D"mld-element"><td align=3D"left" style=3D"Margin:0;pad=
+ding:0px"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-=
+adjust:none;mso-line-height-rule:exactly;font-family:arial,'helvetica neue'=
+,helvetica,sans-serif;line-height:150%;font-size:16px;color:#333333;font-st=
+yle:normal;font-weight:normal">Hello&nbsp;Ankush Bhadwar,</p><p style=3D"Ma=
+rgin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-hei=
+ght-rule:exactly;font-family:arial,'helvetica neue',helvetica,sans-serif;li=
+ne-height:150%;font-size:16px;color:#333333;font-style:normal;font-weight:n=
+ormal">&nbsp;</p><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-tex=
+t-size-adjust:none;mso-line-height-rule:exactly;font-family:arial,'helvetic=
+a neue',helvetica,sans-serif;line-height:150%;font-size:16px;color:#333333;=
+font-style:normal;font-weight:normal">We=E2=80=99re excited to inform you t=
+hat you=E2=80=99ve been shortlisted for an opportunity at DELOITTE =E2=80=
+=93 one of the leading names in the industry!</p><p style=3D"Margin:0;-webk=
+it-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exa=
+ctly;font-family:arial,'helvetica neue',helvetica,sans-serif;line-height:15=
+0%;font-size:16px;color:#333333;font-style:normal;font-weight:normal">&nbsp=
+;</p><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjus=
+t:none;mso-line-height-rule:exactly;font-family:arial,'helvetica neue',helv=
+etica,sans-serif;line-height:150%;font-size:16px;color:#333333;font-style:n=
+ormal;font-weight:normal">=E2=9E=A1=EF=B8=8F&nbsp;Salary Package: Up to =E2=
+=82=B916.7 LPA</p><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-te=
+xt-size-adjust:none;mso-line-height-rule:exactly;font-family:arial,'helveti=
+ca neue',helvetica,sans-serif;line-height:150%;font-size:16px;color:#333333=
+;font-style:normal;font-weight:normal">=F0=9F=91=89&nbsp;<a target=3D"_blan=
+k"  href=3D"https://mc.freshersindia.in/links/CuajjnSsbChMkeIaeGbMcbZyAZacI=
+sMKEiAEGBRxZffMvvyvFMSVYjJlBMCagKMKViAeWBMsfxGBMb/3512433" style=3D"-webkit=
+-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exact=
+ly;text-decoration:underline;color:#1376c8"><strong>Schedule Your Interview=
+ Here</strong></a></p><p style=3D"Margin:0;-webkit-text-size-adjust:none;-m=
+s-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial,'hel=
+vetica neue',helvetica,sans-serif;line-height:150%;font-size:16px;color:#33=
+3333;font-style:normal;font-weight:normal">&nbsp;</p><p style=3D"Margin:0;-=
+webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule=
+:exactly;font-family:arial,'helvetica neue',helvetica,sans-serif;line-heigh=
+t:150%;font-size:16px;color:#333333;font-style:normal;font-weight:normal">=
+=F0=9F=8F=A0&nbsp;<a target=3D"_blank"  href=3D"https://mc.freshersindia.in=
+/links/CuajjnSsbChMkeIaeGbMcbZyAZacIsMKEiAEGBRxZffMvvyvFMSVYjJlBMCagKMKViAe=
+WBMsfxGBMb/3512434" style=3D"-webkit-text-size-adjust:none;-ms-text-size-ad=
+just:none;mso-line-height-rule:exactly;text-decoration:underline;color:#137=
+6c8"><strong>WORK FROM HOME JOBS</strong></a></p><p style=3D"Margin:0;-webk=
+it-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exa=
+ctly;font-family:arial,'helvetica neue',helvetica,sans-serif;line-height:15=
+0%;font-size:16px;color:#333333;font-style:normal;font-weight:normal">&nbsp=
+;</p><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjus=
+t:none;mso-line-height-rule:exactly;font-family:arial,'helvetica neue',helv=
+etica,sans-serif;line-height:150%;font-size:16px;color:#333333;font-style:n=
+ormal;font-weight:normal">Don=E2=80=99t miss out on this golden opportunity=
+ to advance your career with DELOITTE.</p><p style=3D"Margin:0;-webkit-text=
+-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;fo=
+nt-family:arial,'helvetica neue',helvetica,sans-serif;line-height:150%;font=
+-size:16px;color:#333333;font-style:normal;font-weight:normal">&nbsp;</p><p=
+ style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;=
+mso-line-height-rule:exactly;font-family:arial,'helvetica neue',helvetica,s=
+ans-serif;line-height:150%;font-size:16px;color:#333333;font-style:normal;f=
+ont-weight:normal">Warm regards,<br>Soumya Sharma | HR Team</p><p style=3D"=
+Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-h=
+eight-rule:exactly;font-family:arial,'helvetica neue',helvetica,sans-serif;=
+line-height:150%;font-size:16px;color:#333333;font-style:normal;font-weight=
+:normal">&nbsp;</p></td></tr></table></td></tr></tbody></table><!--[if mso]=
+></td><![endif]--><!--[if mso]></tr></table><![endif]--></td></tr></tbody><=
+/table></td></tr></tbody></table><table cellspacing=3D"0" cellpadding=3D"0"=
+ role=3D"presentation" width=3D"100%" align=3D"center" class=3D"ml-content"=
+ style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collaps=
+e;border-spacing:0px;table-layout:fixed !important;width:100%"><tbody><tr><=
+td align=3D"center" style=3D"Margin:0;padding:0px"><table cellspacing=3D"0"=
+ cellpadding=3D"0" role=3D"presentation" align=3D"center" width=3D"600" cla=
+ss=3D"ml-content-body" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;b=
+order-collapse:collapse;border-spacing:0px;width:600px"><tbody><tr ><td ali=
+gn=3D"left" class=3D"mld-structure" style=3D"Margin:0;padding:7px 20px 0px"=
+><!--[if mso]><table style=3D"width:560px" cellpadding=3D"0" cellspacing=3D=
+"0"><tr><![endif]--><!--[if mso]><td style=3D"width:560px" valign=3D"top"><=
+![endif]--><table cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation"=
+ align=3D"left" class=3D"ml-left" style=3D"mso-table-lspace:0pt;mso-table-r=
+space:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tbody><t=
+r class=3D"mld-container"><td align=3D"center" valign=3D"top" class=3D"ml-m=
+-p20b" style=3D"Margin:0;margin:0px;padding:0px;width:560px"><table cellspa=
+cing=3D"0" cellpadding=3D"0" role=3D"presentation" width=3D"100%" style=3D"=
+mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;padding:0px;bo=
+rder-radius:0px;border-collapse:collapse"></table></td></tr></tbody></table=
+><!--[if mso]></td><![endif]--><!--[if mso]></tr></table><![endif]--></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></table></div> <tab=
+le cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D=
+"font-family:arial,sans-serif; font-size:12px; color:#888888; margin: 20px =
+0; width: 100%; text-align:center;"> <tr><td style=3D"line-height: 25px;"><=
+p style=3D"font-size:12px; margin: 0;">If you wish to opt out of all type o=
+f emails, click <a style=3D"color: #0096c7;" href=3D"https://mc.freshersind=
+ia.in/un/CuajjnSsbChMkeIaeGbMcbZyAZacIsMKEiAEGBRxZffMvvyvFMSVYjJlBMCagKMKVi=
+AeWBMsfxGBMb">Unsubscribe</a>.</p></td></tr>    </table><article style=3D"p=
+osition:absolute;visibility:hidden;" class=3D"preheader">
+<img height=3D"1" src=3D"https://mc.freshersindia.in/opens/CuajjnSsbChMkeIa=
+eGbMcbZyAZacIsMKEiAEGBRxZffMvvyvFMSVYjJlBMCagKMKViAeWBMsfxGBMb/blank.gif" a=
+ria-hidden=3D"true" style=3D"display:none;mso-hide:all;" alt=3D"open" width=
+=3D"1" loading=3D"lazy" />
+</article><div style=3D"display:none"><a href=3D"https://mc.freshersindia.i=
+n/a/cdajJqBeyaEgbMsKZIaJAsIs" style=3D"display:none !important;">.</a></div=
+> </body></html>
+--f920873cb7198cb0042da7a75e185f486d1126f7ae0e8caa706a555295bc--
