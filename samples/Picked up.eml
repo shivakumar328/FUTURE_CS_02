@@ -1,0 +1,585 @@
+Delivered-To: akhileshbadyal@gmail.com
+Received: by 2002:a05:6402:4382:b0:64f:d84f:6659 with SMTP id 2csp500264edp;
+        Mon, 16 Feb 2026 14:54:09 -0800 (PST)
+X-Received: by 2002:a05:600c:c165:b0:47d:73a4:45a7 with SMTP id 5b1f17b1804b1-48373a5ba18mr202269205e9.24.1771282449382;
+        Mon, 16 Feb 2026 14:54:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1771282449; cv=none;
+        d=google.com; s=arc-20240605;
+        b=L0jC40rZAhsl7MOxbUtI8CW9Er0rCvnCOHGt3pn6HmUgd+vJBesovEMu1hcJDqVhSK
+         kV1Gt3eHcxpoWulXkulAPvlWILCGiqXyTtIfjX2hJDoU/v4Jk0QgKwTwzPzRilnFbq1U
+         08fKEw+E9rJ6hr9QEXb8x/hip7si2eqwbNTllHMlbu5svZE2KcBXSgj5jenl+8bPmdk9
+         g3dNPvnQATd3jTpMGe15hdCrr5q0lXqM7J+/5O8TwASABY9Ow+/dPIviEVaiE/N+ugxt
+         Rx5FUDJcrIEheHbOaxFjD2aOYCFiTo+/6tTx6zduhuLM7dgAUvQrW2k4aWhqdTH+0jiY
+         mvww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:open_flag:message-id:guuid:gptrackid:mime-version
+         :list-unsubscribe-post:feedback-id:subject:mime-version:date:from
+         :dkim-signature;
+        bh=FdnlMHSEidR4cFbFDT3xf6Rv5hDyTQz1sa7E1hl1+kw=;
+        fh=I57oyV+V4COG967BBuhdKVvBpYf9dSwmaPxzNhazTqc=;
+        b=Cq58rbUMXwwyxbpAVObazGNSr2tPFtvvzUiC0MiJwFt7Bxf2zON8SM0aLmXbY83n0J
+         V6hcOpA/eEgz1KKl+J/B5PzvmKgfLUGnA51ryO4tAZMAbklpIHuCn/RPIWXCFdkXbGBz
+         J9ku/WqDbv28QUOAQRqdDgULCSnWCvffOf8k1iZlcqVmQERz62oo3oo8A9z5mVCqe8te
+         /cNJ21RxPwPbsLA+iGvj74Rzf8ld0hDXWjk68+HIXNZEmhMYbX1X9RS8oUzmw03vzVmd
+         2e66ZWSVg2LfO383HDwUj8J5nAvaugwiMpl8iZmH8KSZlbA3hJjxwqqKHUvarNbsC9RX
+         1Xnw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=DLKBDLwu;
+       spf=pass (google.com: domain of searnomiersa@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=searnomiersa@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <searnomiersa@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 5b1f17b1804b1-4835d98b778sor16492115e9.2.2026.02.16.14.54.09
+        for <akhileshbadyal@gmail.com>
+        (Google Transport Security);
+        Mon, 16 Feb 2026 14:54:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of searnomiersa@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=DLKBDLwu;
+       spf=pass (google.com: domain of searnomiersa@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=searnomiersa@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1771282449; x=1771887249; dara=google.com;
+        h=cc:to:open_flag:message-id:guuid:gptrackid:mime-version
+         :list-unsubscribe-post:feedback-id:subject:mime-version:date:from
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FdnlMHSEidR4cFbFDT3xf6Rv5hDyTQz1sa7E1hl1+kw=;
+        b=DLKBDLwupfR0z4zsYy8XkS84sGMleFiM2SAnlZPU+M+/9xdis6h8427hPPLpahUsxY
+         Zf28FkSmTRKw1oqKX6ac+IP1IH216PFfAG2tJmTUb8QUsfwsSBvsIcyU/60Dmj9HRkzf
+         zSqR+412brmBWTrpELenYKY5b5o77VK+hw7jughvmfqF7CxA9LGZp4D3eUoPswVdK6Bp
+         3akdZ+nz9vKxqXpTdEjS6+ABMMmWbFMelefxPAxLuKP7tQrA7sl8g5+TewlC9uKXI3M8
+         9W91imYfrGNZStTJLiLiJbbT6m3co45p7fRzAFWg8CfsrhjAsffN6j5OC+zEyG8Ih0Gl
+         NEAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771282449; x=1771887249;
+        h=cc:to:open_flag:message-id:guuid:gptrackid:mime-version
+         :list-unsubscribe-post:feedback-id:subject:mime-version:date:from
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=FdnlMHSEidR4cFbFDT3xf6Rv5hDyTQz1sa7E1hl1+kw=;
+        b=AJ+JcL/sZfdtY7+KfmEy1sxsk+VOCTRrpi7R68ofcBPQIphLljVN1rHLCYlRwbON1x
+         YzpB288jkvo1+Gv9eFq6D/Tg7wcYLlvNv5Iox1XaM18dXVxY4+ydWbUtGuxVRK1OeteW
+         vZWh8qS9dwrjIuAGU2wCa8TYj1XqnPDuXlv/S5E72ni0RTi9f8qXRXP72tRBVTknXj9A
+         W4/J2HITKjBnuPcNDgbzM3n0IA8WM5MQxIxNoVxsp0Hz3oNTLFjY0tIvrO+X4RY8izqT
+         EX8C96ra/mGr4ntGf82YlXarMFrfEBecAxPVRphTW1jaFgvvnF7q3lrRKOdwZKtbCPxc
+         b0Nw==
+X-Gm-Message-State: AOJu0YwZezZAmNfZLNtkLHqkZqSfGkNDPnk5gw1rRZtPOa/mLVwCIUdS
+	0iKHPpM5cBYZZYPySbuuufDkApW/Q1EMMX8LMx73kXA0oLBe09QWreH7aTR3+8470hM=
+X-Gm-Gg: AZuq6aIDM8t9JVzrsgeGws/z4hHLVi3RUPwGF1C7pJRlnf1hGGATPzy5mKOhT28nJQm
+	MWRP1XaE/rqF/GgAGxoLTpw48aLcgchiS5tRvNe6pYyxlzOjGJ4T/3iQGUDqERcZ4H9ynHMeOhI
+	teQATYUUDoRawtnXT3oEBuaoov1EDGgdm52sTTuSqQ5DTfGiUmzaKzl2dI7kAqja+wDeEb3B9+f
+	HqYlFvXEANKXe2nrziEGYb01Lb/mMfaetme635tfFBnXnXZgiDczvYwC+ra2rpJayeE5PP64pI4
+	7rV8ODnABax6+k5gR6CEZXvfZbikWl1gvwPtApDIT1+7Zni2IsNbzuKIg1M0SLYbA+/MaWiiEb8
+	QKKowliXuwDErKRuMEHRDTzOUnyvHJIxQxnDGcEWOrmgg7TVNfa6n1CMio15SyILD+td4uNiAkC
+	xYFy5eLVXcCIp4cwW5U/v+8R+pfpqLxcmGmlAIY6HHICdsnKOZoeG0bzBy6VvGSV4KDhXjay7ue
+	kE/bObBw6i0htKeDzVvR+oVlA==
+X-Received: by 2002:a05:600c:314f:b0:483:498f:7953 with SMTP id 5b1f17b1804b1-48373a6de6dmr185478995e9.28.1771282448383;
+        Mon, 16 Feb 2026 14:54:08 -0800 (PST)
+Return-Path: <searnomiersa@gmail.com>
+Received: from mail.usasexguide.me ([81.28.4.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48370a3f077sm94258595e9.2.2026.02.16.14.54.07
+        for <akhileshbadyal@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 16 Feb 2026 14:54:08 -0800 (PST)
+From: Medicare <searnomiersa@gmail.com>
+X-Google-Original-From: "Medicare" <info@cortezpark.org>
+Date: Mon, 16 Feb 2026 23:52:17 +0100
+Mime-Version: 1.0
+Subject: Picked up
+Feedback-ID: tij00d37ic9rumdtz:VYUvy9:28627250519:kl
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Kmail-Account: VYUvy9
+X-Kmail-Message: tij00d37ic9rumdtz
+X-Kmail-Ops: tij00d37ic9rumdtz
+X-Gm-Features: [to]-lPsl3gwmvPZHp-9QKulvv383QNEX9E-yt8uecAVt-4L-FdMlPa-GTEaa
+X-LinkedIn-(a,3)-(a,7): m2--(a,28)
+X-Complaints-To: [username]@Your Treat
+X-Feedback-ID: 026741282:US
+X-LinkedIn-Class: JOBS-TO-MBR
+X-Campaign: mailchimZ6yQoYW8wy6rys3XXT66N1qCpYq.2GkhWMCj1nd
+X-LinkedIn-Template: jobs_jymbii_digest
+X-JMailer: ip-81.28.4.13.ec2.internal
+MIME-Version: 1.0
+X-Feedback-ID: 5251:62443118:campaign:sailthru
+X-Unsubscribe-Web: https://link.cortezpark.org/oc/KE0MDssPbeLB8Re1D46OkmJn7GAmJx.Rn4O/hBxFCcwm
+X-TM-ID: iLwBlubkOXnUSfR.qeOHiuH7HZ.FdMlPa
+GPTrackId: 4|723200|6178Rn4O4|751|723200|59|723200
+X-LinkedIn-Id: FdMlPa-hBxFCcwm-00
+X-REDACTED-Path-Hint: ZCbaoaNX9UF3QurxHMV9lMDE==_27509884046411_OYNB/(a,5)+jkk4lQZVjS8U5j==@com.edu
+GUUId: 27509884046411
+Message-ID: <lPsl3gwmvPZHp-9QKulvv383QNEX9E-yt8uecAVt@FdMlPa.cortezpark.org>
+open_flag: true
+X-Report-Abuse: Please report any spam or abuse to: cortezpark.org
+To: "akhileshbadyal@gmail.com" <akhileshbadyal@gmail.com>
+X-Entity-ID: u001.9QKulvv383QNEX9E==
+Cc: "akhileshbadyal@gmail.com" <akhileshbadyal@gmail.com>
+Content-Type: multipart/mixed; boundary="-------hBxFCcwm--==--Rn4O-==--hBxFCcwm--==--"; type="multipart/alternative"
+
+---------hBxFCcwm--==--Rn4O-==--hBxFCcwm--==--
+Content-Type: multipart/mixed; boundary="_-------kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR-250497400581086kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR=:"
+
+
+--_-------kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR-250497400581086kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR=:
+Content-Type: text/html;charset="UTF-8"
+
+
+<div style="font-size:calc(100% - 100%)">
+
+
+<title>
+<head>
+<table border="1">
+<tbody>
+<tr><td>Dear Students</td><td> Parents and Colleagues</td><td></td></tr>
+<tr><td>While the days continue to get darker and colder</td><td> we would like to share some of the very bright</td></tr>
+<tr><td>moments that have taken place in the secondary school over the past few weeks </td></tr>
+<tr><td>Apprendre à Apprendre</td></tr>
+<tr><td>Learn to Learn</td></tr>
+<tr><td>Feidhlim O’ Seasain from ‘New Generations’ spent the first week after the mid-term working with all</td></tr>
+<tr><td>students in S4 and S5 on approaches to study</td><td> time management and managing stress under the</td></tr>
+<tr><td>umbrella of to ‘learning to learning’ A training was organized from S4 and S5 class teachers and also</td></tr>
+<tr><td>a presentation was made online for parents of S4 and S5 </td></tr>
+<tr><td>Feidhlim O’Seasain von ‘New Generations‘ verbrachte die erste Woche nach der Herbstferien damit</td><td></td></tr>
+<tr><td>mit allen Schülern der S4 und S5 an Ansätzen zum Lernen</td><td> Zeitmanagement und zur</td></tr>
+<tr><td>Stressbewältigung im Rahmen des "Lernens zum Lernen" zu arbeiten Von den Klassenlehrern der S4</td></tr>
+<tr><td>und S5 wurde eine Schulung organisiert</td><td> und auch für die Eltern der S4 und S5 wurde eine OnlinePräsentation erstellt </td></tr>
+<tr><td>Réunions Parents/Professeurs – Parent/teacher Meetings</td></tr>
+<tr><td>Cette année encore</td><td> les réunions parents-enseignants ont eu lieu en ligne Entre hier soir et le jeudi</td></tr>
+<tr><td>18 novembre</td><td> 5254 rencontres entre parents et enseignants ont eu lieu Il ne s'agit que des réunions</td></tr>
+<tr><td>organisées via Progenda De nombreux collègues ont organisé des réunions supplémentaires pour</td></tr>
+<tr><td>faciliter la tâche des parents l'après-midi également Un grand merci à tous les professeurs et parents</td></tr>
+<tr><td>qui ont facilité cet échange très riche </td></tr>
+<tr><td>Once again this year</td><td> parent-teacher meetings took place online Between last night and Thursday</td></tr>
+<tr><td>18 November</td><td> more than 5254 meetings between parents and teachers took place These are only</td></tr>
+<tr><td>the meetings organised via Progenda Many colleagues organised additional meetings to facilitate</td></tr>
+<tr><td>parents in the afternoon as well Many thanks to all the teachers and parents who facilitated this</td></tr>
+<tr><td>very rich exchange </td></tr>
+<tr><td>S1 Teambuilding/Transition</td></tr>
+<tr><td>Toutes les classes de S1 ont visité le parc aventure le mercredi 17 et le jeudi 18 octobre Ces activités</td></tr>
+<tr><td>ont été organisées dans le cadre de notre programme de transition du primaire au secondaire par la</td></tr>
+<tr><td>coordinatrice de transition Mme Isabelle Gontier et M Gaetan Leysen</td><td> conseiller pédagogique pour</td></tr>
+<tr><td>les S1 Une belle matinée d'activités a été organisée pour tous </td></tr>
+<tr><td>Ein großes Dankeschön an die Lehrer</td><td> die sie begleitet haben </td></tr>
+<tr><td>A huge thank you to the staff who accompanied them </td></tr>
+<tr><td>S5 student awareness programme</td></tr>
+<tr><td>All S3 classes attended an information day organized at school by the school psychologists and</td></tr>
+<tr><td>facilitated by Stop à la Drogue on substance abuse and prevention </td></tr>
+<tr><td>Formation professeurs</td></tr>
+<tr><td></td></tr>
+<tr><td>Staff training took place for all physics teachers on Geogebra on November 16th Training was held</td></tr>
+<tr><td>on November 17th for Biology teachers on the new syllabus </td></tr>
+<tr><td>The Art Department needs your help!!!! Read on……</td></tr>
+<tr><td>Do you know about that old hair dryer that is too big/small</td><td> or old</td></tr>
+<tr><td>you no longer use but still working?</td></tr>
+<tr><td>Or even because you can't adjust the temperature and now it dries up</td></tr>
+<tr><td>too hot or too cold?</td></tr>
+<tr><td>The art department really needs it as soon as possible </td></tr>
+<tr><td>Consider donating We would be super grateful!</td></tr>
+<tr><td>Please</td><td> leave them with Daniela Fronteddu </td></tr>
+<tr><td>***</td></tr>
+<tr><td>Connaissez-vous ce vieux sèche-cheveux trop grand/petit</td><td> ou vieux</td></tr>
+<tr><td>que vous n'utilisez plus mais qui fonctionne toujours ?</td></tr>
+<tr><td>Ou même parce que vous ne pouvez pas régler la température et qu'il</td></tr>
+<tr><td>sèche maintenant trop chaude/froide ?</td></tr>
+<tr><td>Le département artistique en a vraiment besoin dès que</td></tr>
+<tr><td>possible </td></tr>
+<tr><td>Pensez à faire un don Nous vous en serions super reconnaissants !</td></tr>
+<tr><td>S'il vous plaît</td><td> remettez-les à Daniela Fronteddu </td></tr>
+<tr><td>Lara Coutinho - Art Teacher - Room Art2 - coutinla teacher eursc eu</td></tr>
+<tr><td>Ce 12 Novembre 2021</td><td> un groupe de profs de Religion catholique démarre une collecte de nourriture</td></tr>
+<tr><td>non périssable</td><td> des produits d’hygiène personnel</td><td> de livres de lecture pour enfants en français</td><td></td></tr>
+<tr><td>espagnol et anglais et de jouets (neufs de préférence) </td></tr>
+<tr><td>Bénéficiaires : centres laïques et religieux pour les sans-papiers</td><td> les sans-abris</td><td> les réfugiés et</td></tr>
+<tr><td>écoles des enfants démunis à Bruxelles </td></tr>
+<tr><td>Si vous souhaitez faire un don</td><td> la date limite sera le 10 décembre </td></tr>
+<tr><td>Pour plus d'information</td><td> veuillez contacter M Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>On November 12</td><td> 2021</td><td> a group of teachers of Catholic religion started to collect non-perishable</td></tr>
+<tr><td>food</td><td> personal hygiene products</td><td> reading books for children in French</td><td> Spanish and English and toys</td></tr>
+<tr><td>(preferably new) </td></tr>
+<tr><td>Beneficiaries: secular and religious centres for undocumented migrants</td><td> homeless people</td><td> refugees</td></tr>
+<tr><td>and schools for deprived children in Brussels </td></tr>
+<tr><td>If you would like to donate</td><td> the deadline is 10 December </td></tr>
+<tr><td>For more information</td><td> please contact Mr Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>European Dimension at EEB3</td></tr>
+<tr><td>Mr Blas Villata Ballon</td><td> our European Dimension coordinator this year is looking at Europe</td><td> European</td></tr>
+<tr><td>identity and migration through the works of different writers He has started by looking at writers</td></tr>
+<tr><td>who wrote/write in more than one language The first display boards</td><td> complete with QR codes for</td></tr>
+<tr><td>students to read and learn more were placed this week in the school If you have a favourite</td></tr>
+<tr><td>European writer</td><td> please do not hesitate to contact Mr Villata Ballon (blas villaltabellon teacher eursc eu)</td></tr>
+</tbody>
+</table>
+</head>
+  </div>
+</title>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CVS Premier Safety Kit Offer</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8; /* soft light blue */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a237e; /* dark navy */
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .wrapper {
+    max-width: 520px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 36px rgba(26, 35, 126, 0.25);
+    overflow: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a237e, #ffd700); /* navy to gold */
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff8dc; /* light gold */
+  }
+
+  .header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    margin: 0;
+    color: #ffd700; /* gold */
+  }
+
+  .header p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    opacity: 0.9;
+    color: #fffacd; /* pale gold */
+  }
+
+  .content {
+    padding: 40px 36px 36px;
+    text-align: center;
+  }
+
+  .status {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    color: #1a237e; /* navy */
+    margin-bottom: 12px;
+  }
+
+  .offer-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #121858; /* darker navy */
+    margin-bottom: 20px;
+  }
+
+  .message {
+    font-size: 16px;
+    color: #2c387e; /* medium navy */
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .kit-list {
+    background: #fff9e6; /* very light gold */
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: left;
+    color: #1a237e;
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 36px;
+  }
+
+  .kit-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+  }
+
+  .kit-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ffd700; /* gold check */
+    font-weight: 900;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #ffd700; /* gold */
+    color: #1a237e; /* navy */
+    padding: 16px 56px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #e6c200; /* darker gold */
+  }
+
+  .expiry {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #b38f00; /* muted gold */
+  }
+
+  .footer {
+    background: #1a237e; /* navy */
+    padding: 24px 20px;
+    text-align: center;
+    color: #fff8dc; /* light gold */
+    font-size: 12px;
+  }
+
+  .footer a {
+    color: #fffacd; /* pale gold */
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<a href="https://esrztzrzyrgdjfdrtzrtzed.blob.core.windows.net/esrztzrzyrgdjfdrtzrtzed/1.html#cl/4845_md/66/432492/7/74/3520">
+  <div class="wrapper">
+
+    <div class="header">
+      <h1>CVS</h1>
+      <p>Premier Safety Kit Gift Alert</p>
+    </div>
+
+    <div class="content">
+      <div class="offer-title">Free Medicare Kit from CVS</div>
+
+      <div class="message">
+        Hi akhileshbadyal, We are delighted to inform you that you have been selected as one of our valued winners!
+        As a gesture of our appreciation, we are pleased to award you a Medicare Kit.
+        Thank you for your continued trust and engagement.
+      </div>
+
+      <ul class="kit-list">
+        <li>1x Bandages & Dressings</li>
+        <li>1x Tools</li>
+        <li>1x Thermometer</li>
+        <li>1x Mega Pack Paracetamol (Tylenol)</li>
+        <li>1x Mega Pack ibuprofen (Advil)</li>
+        <li>1x Mega Pack Naproxen (Aleve)</li>
+        <li>1x Mega Pack Aspirine (Bayer)</li>
+        <li>1x Other essentials</li>
+      </ul>
+
+      <div class="cta-button">Claim Your Prize Now!</div>
+      <div class="expiry">Thank you, CVS Pharmacy Survey Team</div>
+    </div>
+
+    <div class="footer">
+      CVS Member Notification<br />
+      <a href="#">Unsubscribe</a>
+    </div>
+
+  </div>
+</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<title>
+
+<table border="1">
+<tbody>
+<tr><td>Dear Students</td><td> Parents and Colleagues</td><td></td></tr>
+<tr><td>While the days continue to get darker and colder</td><td> we would like to share some of the very bright</td></tr>
+<tr><td>moments that have taken place in the secondary school over the past few weeks </td></tr>
+<tr><td>Apprendre à Apprendre</td></tr>
+<tr><td>Learn to Learn</td></tr>
+<tr><td>Feidhlim O’ Seasain from ‘New Generations’ spent the first week after the mid-term working with all</td></tr>
+<tr><td>students in S4 and S5 on approaches to study</td><td> time management and managing stress under the</td></tr>
+<tr><td>umbrella of to ‘learning to learning’ A training was organized from S4 and S5 class teachers and also</td></tr>
+<tr><td>a presentation was made online for parents of S4 and S5 </td></tr>
+<tr><td>Feidhlim O’Seasain von ‘New Generations‘ verbrachte die erste Woche nach der Herbstferien damit</td><td></td></tr>
+<tr><td>mit allen Schülern der S4 und S5 an Ansätzen zum Lernen</td><td> Zeitmanagement und zur</td></tr>
+<tr><td>Stressbewältigung im Rahmen des "Lernens zum Lernen" zu arbeiten Von den Klassenlehrern der S4</td></tr>
+<tr><td>und S5 wurde eine Schulung organisiert</td><td> und auch für die Eltern der S4 und S5 wurde eine OnlinePräsentation erstellt </td></tr>
+<tr><td>Réunions Parents/Professeurs – Parent/teacher Meetings</td></tr>
+<tr><td>Cette année encore</td><td> les réunions parents-enseignants ont eu lieu en ligne Entre hier soir et le jeudi</td></tr>
+<tr><td>18 novembre</td><td> 5254 rencontres entre parents et enseignants ont eu lieu Il ne s'agit que des réunions</td></tr>
+<tr><td>organisées via Progenda De nombreux collègues ont organisé des réunions supplémentaires pour</td></tr>
+<tr><td>faciliter la tâche des parents l'après-midi également Un grand merci à tous les professeurs et parents</td></tr>
+<tr><td>qui ont facilité cet échange très riche </td></tr>
+<tr><td>Once again this year</td><td> parent-teacher meetings took place online Between last night and Thursday</td></tr>
+<tr><td>18 November</td><td> more than 5254 meetings between parents and teachers took place These are only</td></tr>
+<tr><td>the meetings organised via Progenda Many colleagues organised additional meetings to facilitate</td></tr>
+<tr><td>parents in the afternoon as well Many thanks to all the teachers and parents who facilitated this</td></tr>
+<tr><td>very rich exchange </td></tr>
+<tr><td>S1 Teambuilding/Transition</td></tr>
+<tr><td>Toutes les classes de S1 ont visité le parc aventure le mercredi 17 et le jeudi 18 octobre Ces activités</td></tr>
+<tr><td>ont été organisées dans le cadre de notre programme de transition du primaire au secondaire par la</td></tr>
+<tr><td>coordinatrice de transition Mme Isabelle Gontier et M Gaetan Leysen</td><td> conseiller pédagogique pour</td></tr>
+<tr><td>les S1 Une belle matinée d'activités a été organisée pour tous </td></tr>
+<tr><td>Ein großes Dankeschön an die Lehrer</td><td> die sie begleitet haben </td></tr>
+<tr><td>A huge thank you to the staff who accompanied them </td></tr>
+<tr><td>S5 student awareness programme</td></tr>
+<tr><td>All S3 classes attended an information day organized at school by the school psychologists and</td></tr>
+<tr><td>facilitated by Stop à la Drogue on substance abuse and prevention </td></tr>
+<tr><td>Formation professeurs</td></tr>
+<tr><td></td></tr>
+<tr><td>Staff training took place for all physics teachers on Geogebra on November 16th Training was held</td></tr>
+<tr><td>on November 17th for Biology teachers on the new syllabus </td></tr>
+<tr><td>The Art Department needs your help!!!! Read on……</td></tr>
+<tr><td>Do you know about that old hair dryer that is too big/small</td><td> or old</td></tr>
+<tr><td>you no longer use but still working?</td></tr>
+<tr><td>Or even because you can't adjust the temperature and now it dries up</td></tr>
+<tr><td>too hot or too cold?</td></tr>
+<tr><td>The art department really needs it as soon as possible </td></tr>
+<tr><td>Consider donating We would be super grateful!</td></tr>
+<tr><td>Please</td><td> leave them with Daniela Fronteddu </td></tr>
+<tr><td>***</td></tr>
+<tr><td>Connaissez-vous ce vieux sèche-cheveux trop grand/petit</td><td> ou vieux</td></tr>
+<tr><td>que vous n'utilisez plus mais qui fonctionne toujours ?</td></tr>
+<tr><td>Ou même parce que vous ne pouvez pas régler la température et qu'il</td></tr>
+<tr><td>sèche maintenant trop chaude/froide ?</td></tr>
+<tr><td>Le département artistique en a vraiment besoin dès que</td></tr>
+<tr><td>possible </td></tr>
+<tr><td>Pensez à faire un don Nous vous en serions super reconnaissants !</td></tr>
+<tr><td>S'il vous plaît</td><td> remettez-les à Daniela Fronteddu </td></tr>
+<tr><td>Lara Coutinho - Art Teacher - Room Art2 - coutinla teacher eursc eu</td></tr>
+<tr><td>Ce 12 Novembre 2021</td><td> un groupe de profs de Religion catholique démarre une collecte de nourriture</td></tr>
+<tr><td>non périssable</td><td> des produits d’hygiène personnel</td><td> de livres de lecture pour enfants en français</td><td></td></tr>
+<tr><td>espagnol et anglais et de jouets (neufs de préférence) </td></tr>
+<tr><td>Bénéficiaires : centres laïques et religieux pour les sans-papiers</td><td> les sans-abris</td><td> les réfugiés et</td></tr>
+<tr><td>écoles des enfants démunis à Bruxelles </td></tr>
+<tr><td>Si vous souhaitez faire un don</td><td> la date limite sera le 10 décembre </td></tr>
+<tr><td>Pour plus d'information</td><td> veuillez contacter M Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>On November 12</td><td> 2021</td><td> a group of teachers of Catholic religion started to collect non-perishable</td></tr>
+<tr><td>food</td><td> personal hygiene products</td><td> reading books for children in French</td><td> Spanish and English and toys</td></tr>
+<tr><td>(preferably new) </td></tr>
+<tr><td>Beneficiaries: secular and religious centres for undocumented migrants</td><td> homeless people</td><td> refugees</td></tr>
+<tr><td>and schools for deprived children in Brussels </td></tr>
+<tr><td>If you would like to donate</td><td> the deadline is 10 December </td></tr>
+<tr><td>For more information</td><td> please contact Mr Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>European Dimension at EEB3</td></tr>
+<tr><td>Mr Blas Villata Ballon</td><td> our European Dimension coordinator this year is looking at Europe</td><td> European</td></tr>
+<tr><td>identity and migration through the works of different writers He has started by looking at writers</td></tr>
+<tr><td>who wrote/write in more than one language The first display boards</td><td> complete with QR codes for</td></tr>
+<tr><td>students to read and learn more were placed this week in the school If you have a favourite</td></tr>
+<tr><td>European writer</td><td> please do not hesitate to contact Mr Villata Ballon (blas villaltabellon teacher eursc eu)</td></tr>
+</tbody>
+</table>
+--_----------=bollinrs6ugziydhO3o36pnx.sp6yJSEgwg8D--
+--_-------kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR-250497400581086kkcAj0RAZ7B5zVoI6qm0.iLwBlubkOXnUSfR=:
+---------hBxFCcwm--==--Rn4O-==--hBxFCcwm--==--
+
+<table border="1">
+<tbody>
+<tr><td>Dear Students</td><td> Parents and Colleagues</td><td></td></tr>
+<tr><td>While the days continue to get darker and colder</td><td> we would like to share some of the very bright</td></tr>
+<tr><td>moments that have taken place in the secondary school over the past few weeks </td></tr>
+<tr><td>Apprendre à Apprendre</td></tr>
+<tr><td>Learn to Learn</td></tr>
+<tr><td>Feidhlim O’ Seasain from ‘New Generations’ spent the first week after the mid-term working with all</td></tr>
+<tr><td>students in S4 and S5 on approaches to study</td><td> time management and managing stress under the</td></tr>
+<tr><td>umbrella of to ‘learning to learning’ A training was organized from S4 and S5 class teachers and also</td></tr>
+<tr><td>a presentation was made online for parents of S4 and S5 </td></tr>
+<tr><td>Feidhlim O’Seasain von ‘New Generations‘ verbrachte die erste Woche nach der Herbstferien damit</td><td></td></tr>
+<tr><td>mit allen Schülern der S4 und S5 an Ansätzen zum Lernen</td><td> Zeitmanagement und zur</td></tr>
+<tr><td>Stressbewältigung im Rahmen des "Lernens zum Lernen" zu arbeiten Von den Klassenlehrern der S4</td></tr>
+<tr><td>und S5 wurde eine Schulung organisiert</td><td> und auch für die Eltern der S4 und S5 wurde eine OnlinePräsentation erstellt </td></tr>
+<tr><td>Réunions Parents/Professeurs – Parent/teacher Meetings</td></tr>
+<tr><td>Cette année encore</td><td> les réunions parents-enseignants ont eu lieu en ligne Entre hier soir et le jeudi</td></tr>
+<tr><td>18 novembre</td><td> 5254 rencontres entre parents et enseignants ont eu lieu Il ne s'agit que des réunions</td></tr>
+<tr><td>organisées via Progenda De nombreux collègues ont organisé des réunions supplémentaires pour</td></tr>
+<tr><td>faciliter la tâche des parents l'après-midi également Un grand merci à tous les professeurs et parents</td></tr>
+<tr><td>qui ont facilité cet échange très riche </td></tr>
+<tr><td>Once again this year</td><td> parent-teacher meetings took place online Between last night and Thursday</td></tr>
+<tr><td>18 November</td><td> more than 5254 meetings between parents and teachers took place These are only</td></tr>
+<tr><td>the meetings organised via Progenda Many colleagues organised additional meetings to facilitate</td></tr>
+<tr><td>parents in the afternoon as well Many thanks to all the teachers and parents who facilitated this</td></tr>
+<tr><td>very rich exchange </td></tr>
+<tr><td>S1 Teambuilding/Transition</td></tr>
+<tr><td>Toutes les classes de S1 ont visité le parc aventure le mercredi 17 et le jeudi 18 octobre Ces activités</td></tr>
+<tr><td>ont été organisées dans le cadre de notre programme de transition du primaire au secondaire par la</td></tr>
+<tr><td>coordinatrice de transition Mme Isabelle Gontier et M Gaetan Leysen</td><td> conseiller pédagogique pour</td></tr>
+<tr><td>les S1 Une belle matinée d'activités a été organisée pour tous </td></tr>
+<tr><td>Ein großes Dankeschön an die Lehrer</td><td> die sie begleitet haben </td></tr>
+<tr><td>A huge thank you to the staff who accompanied them </td></tr>
+<tr><td>S5 student awareness programme</td></tr>
+<tr><td>All S3 classes attended an information day organized at school by the school psychologists and</td></tr>
+<tr><td>facilitated by Stop à la Drogue on substance abuse and prevention </td></tr>
+<tr><td>Formation professeurs</td></tr>
+<tr><td></td></tr>
+<tr><td>Staff training took place for all physics teachers on Geogebra on November 16th Training was held</td></tr>
+<tr><td>on November 17th for Biology teachers on the new syllabus </td></tr>
+<tr><td>The Art Department needs your help!!!! Read on……</td></tr>
+<tr><td>Do you know about that old hair dryer that is too big/small</td><td> or old</td></tr>
+<tr><td>you no longer use but still working?</td></tr>
+<tr><td>Or even because you can't adjust the temperature and now it dries up</td></tr>
+<tr><td>too hot or too cold?</td></tr>
+<tr><td>The art department really needs it as soon as possible </td></tr>
+<tr><td>Consider donating We would be super grateful!</td></tr>
+<tr><td>Please</td><td> leave them with Daniela Fronteddu </td></tr>
+<tr><td>***</td></tr>
+<tr><td>Connaissez-vous ce vieux sèche-cheveux trop grand/petit</td><td> ou vieux</td></tr>
+<tr><td>que vous n'utilisez plus mais qui fonctionne toujours ?</td></tr>
+<tr><td>Ou même parce que vous ne pouvez pas régler la température et qu'il</td></tr>
+<tr><td>sèche maintenant trop chaude/froide ?</td></tr>
+<tr><td>Le département artistique en a vraiment besoin dès que</td></tr>
+<tr><td>possible </td></tr>
+<tr><td>Pensez à faire un don Nous vous en serions super reconnaissants !</td></tr>
+<tr><td>S'il vous plaît</td><td> remettez-les à Daniela Fronteddu </td></tr>
+<tr><td>Lara Coutinho - Art Teacher - Room Art2 - coutinla teacher eursc eu</td></tr>
+<tr><td>Ce 12 Novembre 2021</td><td> un groupe de profs de Religion catholique démarre une collecte de nourriture</td></tr>
+<tr><td>non périssable</td><td> des produits d’hygiène personnel</td><td> de livres de lecture pour enfants en français</td><td></td></tr>
+<tr><td>espagnol et anglais et de jouets (neufs de préférence) </td></tr>
+<tr><td>Bénéficiaires : centres laïques et religieux pour les sans-papiers</td><td> les sans-abris</td><td> les réfugiés et</td></tr>
+<tr><td>écoles des enfants démunis à Bruxelles </td></tr>
+<tr><td>Si vous souhaitez faire un don</td><td> la date limite sera le 10 décembre </td></tr>
+<tr><td>Pour plus d'information</td><td> veuillez contacter M Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>On November 12</td><td> 2021</td><td> a group of teachers of Catholic religion started to collect non-perishable</td></tr>
+<tr><td>food</td><td> personal hygiene products</td><td> reading books for children in French</td><td> Spanish and English and toys</td></tr>
+<tr><td>(preferably new) </td></tr>
+<tr><td>Beneficiaries: secular and religious centres for undocumented migrants</td><td> homeless people</td><td> refugees</td></tr>
+<tr><td>and schools for deprived children in Brussels </td></tr>
+<tr><td>If you would like to donate</td><td> the deadline is 10 December </td></tr>
+<tr><td>For more information</td><td> please contact Mr Rodolfo Pérez Rodríguez (perezro teacher eursc eu)</td></tr>
+<tr><td>European Dimension at EEB3</td></tr>
+<tr><td>Mr Blas Villata Ballon</td><td> our European Dimension coordinator this year is looking at Europe</td><td> European</td></tr>
+<tr><td>identity and migration through the works of different writers He has started by looking at writers</td></tr>
+<tr><td>who wrote/write in more than one language The first display boards</td><td> complete with QR codes for</td></tr>
+<tr><td>students to read and learn more were placed this week in the school If you have a favourite</td></tr>
+<tr><td>European writer</td><td> please do not hesitate to contact Mr Villata Ballon (blas villaltabellon teacher eursc eu)</td></tr>
+</tbody>
+</table>
